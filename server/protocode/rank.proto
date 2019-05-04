@@ -1,0 +1,25 @@
+syntax = "proto2";
+package cardgame;
+
+import "constant.proto";
+import "struct.proto";
+option optimize_for = LITE_RUNTIME;
+option java_package = "com.zhili.cardgame.proto";  
+option java_outer_classname = "Rank";
+
+
+message QueryRankReq {
+	enum DEF {
+		ID = 5200;
+	}
+	required RankType rank_type = 1;
+	required RankTime rank_time = 2; 
+}
+
+message QueryRankResp {
+	enum DEF {
+		ID = 5201;
+	}
+	repeated RankPlayer players = 1;
+	optional int32 my_rank = 2;
+}

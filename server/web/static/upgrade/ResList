@@ -1,0 +1,10 @@
+local list = {
+	ver = 7,
+	stage = {
+		{name="app_v2_201703281105.apk", path="7", code="9ac7a512d0f771d93b26fc5e003a5461", act="apk"},
+	},
+	remove={
+	},
+}
+return list
+	

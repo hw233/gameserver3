@@ -1,0 +1,383 @@
+syntax = "proto2";
+
+package cardgame;
+import "constant.proto";
+option optimize_for = LITE_RUNTIME;
+
+option java_package = "com.zhili.cardgame.proto";  
+option java_outer_classname = "Struct";  
+ 
+//玩家信息
+message Player {
+	required int32 uid = 1;
+	optional string mobile = 2;
+	required string nick = 3;
+	required string avatar = 4;
+	required int64 gold = 5;
+	required int64 diamond = 6;
+	required int32 vip = 7;
+	required int32 charm = 8;
+	
+	required int32 exp = 10;
+	required int32 total_games = 11;
+	required int32 win_games = 12;
+	
+	optional int32 wealth_rank = 13;
+	optional int32 win_rank = 14;
+	optional int32 charm_rank = 15;
+	optional int32 charge_rank = 16;
+	
+	optional string sign = 17;
+	optional int32 sex = 18;
+	optional string birthday = 19;
+	optional string address = 20;
+
+	
+	repeated Gift gifts = 21;
+	repeated Poker best = 22;
+	optional bool is_friend = 23;
+	optional int32 vip_exp = 24;
+}
+
+//玩家信息摘要
+message PlayerBrief {
+	required int32 uid = 1;
+	required string avatar = 2;//头像地址
+	required int64 gold = 3;//剩余金币
+	required int32 seat = 4;
+	required string nick = 5;
+	required int32 vip = 6;
+	optional int64 diamond = 7;
+	optional int32 vip_exp = 8;
+	optional int32 sex = 9;
+	optional int32 exp = 10;
+	optional int32 flow_card = 11;  //用户流量卡
+}
+
+
+message Result {
+	optional int64 gold = 1;
+	optional int64 diamond = 2;
+	optional int32 vip_exp = 3;
+	optional int32 vip = 4;
+	repeated Item items_added = 5;
+	repeated Gift gifts_added = 6;
+	repeated Item items_removed = 7;
+	optional int64 incr_gold = 8; // 增量gold，有+有-
+	optional int64 incr_diamond = 9; // 增量钻石，有+有-
+	optional int32 incr_flow_card = 10; // 增量流量卡，有+有-
+	optional int32 flow_card = 11; // 增量流量卡，有+有-
+}
+
+message Gift {
+    required int32 id = 1;
+    required string name = 2;
+    required string icon = 3;
+    required int32 count = 4;
+
+}
+
+
+message Announcement {
+	required int32 id = 1;
+	required string category = 2;
+	required string title = 3;
+	required string content = 4;
+	required int32 sort = 5;
+	required int32 has_action = 6;
+	optional string action = 7;
+	required int32 popup = 8;//0 弹窗
+}
+
+message Notification {
+	optional int32 has_announcement = 1;
+	optional int32 has_mail = 2;
+	optional int32 has_reward = 3;
+	optional int32 has_friend = 4;
+}
+
+
+message Reward {
+	required int32 id = 1;
+	required string category = 2;
+	required string name = 3;
+	required string description = 4;
+	optional int64 gold = 5;
+	optional int64 diamond = 6;
+	repeated Item items = 7;
+	repeated Gift gifts = 8;
+	required int32 state = 9; // 0 = success（去领奖）， 1 = done(已领奖)，其它则是去完成(正整数)
+	required string action = 10; // table=牌桌,send_world_chat=世界喇叭界面,profile=个人中心,charge=充值,shop=商城,no=无去向
+	optional int32 icon = 11;
+}
+
+message SigninReward {
+	required int32 day = 1;
+	required string description = 2;
+	required int64 gold = 3;
+	required int64 diamond = 4;
+	repeated Item items = 5;
+	repeated Gift gifts = 6;
+}
+
+message Item {
+	required int32 id = 1;
+	required string name = 2;
+	required string icon = 3;
+	required int32 count = 4;
+	optional string description = 5;
+}
+
+
+message ShopItem {
+	required int32 id = 1;
+	required ShopItemType item_type = 2; //  1=gold,2=item
+	optional Item item = 3;              // item信息
+	optional int64 shop_gold = 4;       // ？购买价格
+	
+	required int64 diamond = 5;
+	required int64 gold = 6;
+	
+	optional int64 extra_gold = 8;      // ？扩展金币
+	repeated Item extra_items = 9;      // ？扩展项目
+}
+
+message Trade {
+	required int32 id = 1;
+	required int32 type = 2;            // ？类型
+	required int64 gold = 3;
+	required int64 diamond = 4;
+	required int32 seller = 5;          // ？
+	required string seller_name = 6;    // ？
+	optional int32 vip_exp = 7;
+}
+
+
+//牌
+message Poker {
+	required int32 flower = 1;//花色
+	required int32 value = 2;//面值
+}
+
+//玩家动作
+message PlayerAction {
+	required int32 uid = 1;//玩家uid
+	required BetAction action = 2;//动作类型
+	optional int32 other = 3;//对方：比牌的时候需要传该值
+	required int64 gold = 4;//消耗金币
+}
+
+
+message Chip {
+	required int32 uid = 1;
+	required int64 gold = 2;
+}
+
+//游戏回合
+message GameRound {
+	required int32 round = 1;//当前轮数
+	required int32 current_gambler = 2;//当前玩家
+	required int32 turn_start_time = 3;//开始时间
+	required int32 turn_remain_time = 4;
+}
+
+
+
+message Gambler {
+	required int32 uid = 1;
+	//required string avatar = 2;
+	//required int32 level = 3;
+	//required string nick = 4;
+	required int64 gold = 5;
+	required int64 bet_gold = 6;
+	required bool is_dealer = 8;
+	required bool is_seen = 9;
+	required bool is_given_up = 10;
+	required bool is_fail = 11;
+	required bool is_show_hand = 12;
+	required int32 seat = 13;
+	optional PlayerPokers pokers = 14;
+}
+
+message Table {
+	required int32 id = 1;
+	repeated PlayerBrief players = 2;
+	required TableType table_type = 3;
+	optional GoldFlower goldflower = 4;
+}	
+
+message GoldFlower {
+	required int32 start_time = 1;
+	required GameRound round = 2; //当前轮数
+	repeated Gambler gamblers = 3; 	
+	repeated Chip chips = 4;
+	required int32 required_gold = 5;
+	required int32 max_gold = 6;
+	required int32 required_round = 7;
+	required int32 max_round = 8;
+	required int32 round_seconds = 9;
+}
+
+//玩家金币信息
+message PlayerGold {
+	required int32 uid = 1;//玩家uid
+	required int64 action_gold = 2;//当前动作需要消费金币
+	required int64 bet_gold = 3;//该轮比赛累计消费金币数量：结算时使用
+	required int64 gold = 4;//剩余金币数量
+}
+
+message PlayerPokers {
+	required int32 uid = 1;
+	repeated Poker pokers = 2;
+}
+
+message GameServer{
+
+    required int32 id = 1;
+    required string ip = 2;
+    required int32 port = 3;
+
+}
+
+
+message CharmRecord {
+    required int32 uid = 1;
+    required int32 nick = 2;
+    required int32 nick_color = 3;
+    required int32 num = 4;
+    required int32 action = 5; // 1=加，2=减
+}
+
+message FriendsRecord{
+    required int32 uid = 1;
+    required int32 nick = 2;
+    required int32 nick_color = 3;
+    required int32 action = 4; // 1=同意，2=拒绝
+    optional int32 stuff_id = 5;
+    optional int32 charm_rank = 6;
+}
+
+message BuyRecord{
+    required int32 gold = 1;
+    required int32 stuff_id = 2;
+    required int32 stuff_name = 3;
+    required int32 num = 4;
+}
+
+message SellRecord{
+    required int32 gold = 1;
+    required int32 num = 2;
+}
+
+message ToyRecord{
+    required int32 stuff_id = 1;
+    required int32 stuff_name = 2;
+    required int32 num = 3;
+}
+
+
+message Mail {
+    required int32 id = 1;
+    required int32 from_user = 2;
+    required int32 to_user = 3;
+    required int32 sent_time = 4;
+    optional string title = 5;
+    optional string content = 6;
+    optional int32 type = 7;  //1 = 带附件，0=不带附件
+    optional int64 diamond = 8;
+    optional int64 gold = 9;
+    repeated Item items = 10;
+    repeated Gift gifts = 11;
+    optional int32 received = 12;   // 1= 已接受，0=未接受
+    optional int32 is_read = 13;
+}
+
+
+message Friend {
+	required int32 uid = 1;
+	required int32 type = 2;    // 客服=1，玩家=0
+	required string avatar = 3;
+	required int64 gold = 4;
+	required bool is_online = 5;
+	required string nick = 6;
+	optional int32 room_id = 7;
+	optional int32 table_id = 8;
+        optional int32 sex = 9;
+}
+
+message Enemy {
+	required int32 uid = 1;
+	required string avatar = 2;
+	required int64 gold = 3;
+	required bool is_online = 4;
+	optional int32 room_id = 5;
+	optional int32 table_id = 6;
+}
+
+message FriendApply {
+	required int32 id = 1;
+	required int32 apply_from = 2;
+	required string apply_from_nick = 3;
+	required string apply_from_avatar = 4;
+	required int32 to = 5;
+	required int32 time = 6;
+	required string message = 7;
+	repeated Gift gifts  = 8;
+        optional int32 apply_from_sex = 9;
+}
+
+message FriendMessage {
+	required int32 message_id = 1;
+	required int32 from_user = 2;
+	required string from_user_nick = 3;
+	required string from_user_avatar = 4;
+	required int32 to = 5;
+	required int32 time = 6;
+	required string message = 7;
+        optional int32 from_user_sex = 8;
+}
+
+
+message RankPlayer {
+	required int32 rank = 1;
+	required int32 uid = 2;
+	required string nick = 3;
+	required string avatar = 4;
+	required int64 gold = 5;
+	required int32 charm = 6;
+	optional string rank_reward = 7; // 排名奖励信息
+	optional int64 money_maked = 8; //  赚取的钱
+	optional int32 vip = 9;
+	optional int32 vip_exp = 10;
+	optional int32 charge = 11; // 充值榜使用
+	optional int64 war_win = 12; // 红黑盈利
+	optional int64 lottery_gold = 13; // 时时彩
+	optional int64 lottery_create_time = 14; // 时时彩时间
+	optional int64 texas_gold = 15; // 德州
+        optional int32 sex = 16;
+}
+
+message ChargeItem {
+	required int32 id = 1;
+	required int64 diamond = 2;
+	required string description = 3;
+	required int32 money = 4;
+	optional int32 extra_diamond = 5;
+	optional Item extra_items = 6;
+	optional string icon = 7;
+}
+message LuckyGold {
+	required int32 lucky_type = 1; // 0: 无，1:豹子，2:顺金
+	required int32 total_lucky_gold = 2;
+	required int32 lucky_gold = 3;
+}
+
+message FlowItem {
+	required int32 id = 1;
+	required string name = 2;//移动：200M
+	required int32 icon = 3;//1：移动 2：联通 3：电信
+	required int32 card = 4;
+	required int32 stack = 5;
+	required int32 used = 6;
+	optional string description = 7;
+}

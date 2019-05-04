@@ -1,0 +1,23 @@
+syntax = "proto2";
+package cardgame;
+
+import "struct.proto";
+import "constant.proto";
+
+option java_package = "com.zhili.cardgame.proto";  
+option java_outer_classname = "Vip";
+
+option optimize_for = LITE_RUNTIME;
+
+message ReceiveVipRewardReq {
+	enum DEF {
+		ID = 4100;
+	}
+}
+
+message ReceiveVipRewardResp {
+	enum DEF {
+		ID = 4101;
+	}
+	optional Reward reward = 1;
+}

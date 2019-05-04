@@ -1,0 +1,235 @@
+syntax = "proto2";
+package cardgame;
+
+import "struct.proto";
+import "constant.proto";
+option optimize_for = LITE_RUNTIME;
+option java_package = "com.zhili.cardgame.proto";
+option java_outer_classname = "Texas";
+
+message TexasSitTableReq{
+    enum DEF {
+        ID = 5600;
+    }
+    required int32 table_id = 1; // -1 为快速进入, >1可能是断网重连之类的
+    repeated int32 not_tables = 2;//历史房间号房间号：记录最近的三个
+}
+
+message TexasSitTableResp{
+    enum DEF {
+        ID = 5601;
+    }
+    optional TexasTable table = 1;
+	optional int32 room_id = 2;//房间id，备用
+    optional PlayerPokers own_pokers = 3; // 断网重连时，需要获取自己的poker
+
+
+
+}
+
+message TexasTableEvent{
+    enum DEF {
+        ID = 5602;
+    }
+    required int32 table_id = 1;//房间号
+	required TableEventType event_type = 2;//玩家牌桌事件：进入房间还是离开房间
+	required int32 player = 3;
+	optional PlayerBrief player_brief = 4;//玩家信息
+	optional int32 seat = 5;//座位号
+	optional int32 kicker = 6; // 踢人者
+}
+
+
+message TexasBetActionReq{
+    enum DEF {
+        ID = 5603;
+    }
+    required int32 table_id = 1;
+    required TexasBetType bet_type = 2; // 动作类型：加注、pass、弃牌、参与游戏
+    required TexasStatus texas_status = 3; // 第几轮，（参与游戏=0，拿到手牌=1，拿到3张公牌=2，拿到2张公牌3，pass=4）
+    optional int64 action_gold = 4; // 底注 | 加注
+    optional int64 bet_reward_gold = 5; // 彩金
+
+}
+
+message TexasBetActionResp{
+    enum DEF {
+        ID = 5604;
+    }
+}
+
+message TexasBetActionEvent{
+    enum DEF {
+        ID = 5605;
+    }
+    required int32 table_id = 1;//房间号
+	required int32 player = 2;//玩家uid
+	required TexasBetType bet_type = 3;//动作类型：加注、pass、弃牌、参与游戏等
+    required TexasStatus texas_status = 4;
+	optional int64 action_gold = 5;//消耗金币,此次动作消耗金币
+	optional int64 bet_reward_gold = 6;//消耗彩金，参与游戏时有值
+	optional int64 bet_gold = 7;//总消费金币（bet_gold = action_gold + 底注 + 彩金）
+	optional int64 gold = 8;//剩余金币（gold = gold - bet_gold = gold - action_gold + 底注 + 彩金）
+}
+
+message TexasRoundEvent{
+    enum DEF {
+        ID = 5606;
+    }
+    required int32 table_id = 1;
+    required TexasStatus texas_status = 2;
+    repeated Poker public_pokers = 3;
+    repeated Poker player_pokers = 4;
+}
+
+//游戏结束事件
+message TexasGameOverEvent {
+    enum DEF {
+        ID = 5607;
+    }
+    required int32 table_id = 1; //房间号
+    repeated Poker public_pokers = 2; //公牌
+    repeated PlayerPokers own_pokers = 3;
+
+    repeated TexasPlayerPokers final_player_pokers = 4;
+
+    repeated TexasPlayerResult player_results = 5;
+}
+
+message TexasQueryPlayerReq{
+    enum DEF {
+        ID = 5608;
+    }
+    required int32 uid = 1;
+}
+
+message TexasQueryPlayerResp{
+    enum DEF {
+        ID = 5609;
+    }
+    optional PlayerBrief player_brief = 1;
+    optional int32 play_count = 2;
+    optional int32 win_rate = 3;
+    optional int64 big_win_gold = 4;
+}
+
+
+message TexasLeaveTableReq{
+    enum DEF {
+        ID = 5610;
+    }
+	required int32 table_id = 1;//当前房间号
+}
+
+message TexasLeaveTableResp{
+    enum DEF {
+        ID = 5611;
+    }
+}
+
+// 内部
+message TexasLeaveInternalReq {
+    enum DEF {
+        ID = 5612;
+    }
+}
+
+message TexasLeaveInternalResp {
+    enum DEF {
+        ID = 5613;
+    }
+}
+
+message TexasUpdatePlayerReq{
+	enum DEF {
+		ID = 5614;
+	}
+}
+
+message TexasUpdatePlayerResp{
+	enum DEF {
+		ID = 5615;
+	}
+}
+
+
+message TexasStartEvent{
+	enum DEF {
+		ID = 5616;
+	}
+    required TexasTable table = 1;
+}
+
+message TexasPlayerPokers {
+    required int32 uid = 1;
+	required TexasPokerType poker_type = 3;
+    repeated Poker pokers = 2;
+
+}
+
+
+
+message TexasPlayerResult {
+    required int32 uid = 1;
+    required int32 result = 2; // 输庄家 < 0  < 赢庄家
+    required int64 win_gold = 3;
+    required int64 reward_gold = 4;
+    required int64 gold = 5;
+    optional int64 bet_gold = 6; // 底注；
+    optional int64 add_bei_gold = 7; // 加倍注；
+    optional bool is_watch = 8; // 是否观战；
+    optional bool is_giveup = 9; // 是否弃牌；
+}
+
+
+message TexasTable{
+    required int32 id = 1;
+    required int32 remain_seconds = 2;
+    required TexasStatus texas_status = 3; // 第几轮，（参与游戏=0，拿到手牌=1，拿到3张公牌=2，拿到2张公牌3，pass=4）
+    repeated PlayerBrief player_briefs = 4; // 牌桌内用户数据
+    repeated Poker public_pokers = 6; // 公牌 > 3+2
+    repeated TexasPlayerPokers final_player_pokers = 7;
+    repeated TexasPlayerResult player_results = 8;
+    optional TableType table_type = 9;
+}
+
+// 第几轮，（参与游戏=0，拿到手牌=1，拿到3张公牌=2，拿到2张公牌3，pass=4）
+enum TexasStatus{
+    TEXAS_WAIT = 1;   // 从大厅进入，等待用户投注底金和彩金，提前结束只有所有用户做了操作才能提前结束
+    TEXAS_START = 2;  // 估计没用到
+    TEXAS_HAND = 3;  // 估计直接从 wait =》handl 这里，给所有投注了底注和彩金的用户显示【加注|弃牌|PASS】
+                      // bet_action 处理函数中，如果没有用户操作【pass】，那么直接进入亮牌阶段
+    TEXAS_PUBLIC_3 = 4; // 上轮操作了的用户，在该轮只能等待别的玩家操作完成
+                         // 第一轮pass的用户，在这里执行第二轮【加注|弃牌|PASS】
+                        // bet_action 处理函数中，如果没有用户操作【pass】，那么直接进入亮牌阶段
+    TEXAS_PUBLIC_5 = 5; // 连着两轮都pass了的用户，这里执行第三轮【加注|弃牌】，别的已操作用户只能等待
+                        // bet_action 处理函数中，等待最后一个用户操作，操作完成直接进行亮牌阶段
+    TEXAS_OVER = 6;   // 结算阶段，展示动画等
+}
+
+enum TexasBetType{
+    BET = 1;//下底注
+    ADD_BEI = 2; //加倍注
+    PASS = 3;//过
+    GIVEUP = 4;//弃牌
+    WATCH = 5;//观看
+}
+
+enum TexasPokerType {
+    T_GAO = 1;
+    T_DUI = 2;
+    T_2_DUI = 3;
+    T_3_TIAO = 4;
+    T_SHUN = 5;
+    T_TONGHUA = 6;
+    T_HULU = 7;
+    T_4_TIAO = 8;
+    T_TONGHUASHUN = 9;
+    T_ROYAL = 10;
+}
+
+enum TexasTableType {
+    TEXAS_L = 1;
+    TEXAS_M = 2;
+    TEXAS_H = 3;
+}

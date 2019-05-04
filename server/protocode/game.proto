@@ -1,0 +1,214 @@
+syntax = "proto2";
+package cardgame;
+
+import "constant.proto";
+import "struct.proto";
+option optimize_for = LITE_RUNTIME;
+option java_package = "com.zhili.cardgame.proto";  
+option java_outer_classname = "Game";
+
+
+//快速开始
+message SitTableReq {
+    enum DEF {
+        ID = 5000;
+    }
+	required int32 table_id = 1;//如果是快速开始则为-1;如果是换房间则为当前房间号
+	required int32 table_type = 2;	// 类型：初级场|高级场,如果是快速开始则为-1;
+	repeated int32 not_tables = 3;//历史房间号房间号：记录最近的三个
+}
+
+message SitTableResp {
+    enum DEF {
+        ID = 5001;
+    }
+	optional Table table = 1;//被分配的房间信息
+	optional int32 room_id = 2;//房间id，备用
+}
+
+
+//离开房间到大厅
+message LeaveTableReq {
+    enum DEF {
+        ID = 5002;
+    }
+	required int32 table_id = 1;//当前房间号
+}
+
+message LeaveTableResp {
+    enum DEF {
+        ID = 5003;
+    }
+}
+
+// 内部
+message LeaveTableInternalReq {
+    enum DEF {
+        ID = 5004;
+    }
+}
+
+message LeaveTableInternalResp {
+    enum DEF {
+        ID = 5005;
+    }
+}
+
+message KickOtherReq {
+	enum DEF {
+		ID = 5006;
+	}
+	required int32 other = 1;
+}
+
+message KickOtherResp {
+	enum DEF {
+		ID = 5007;
+	}
+	optional int32 other = 1;
+	optional Result result = 2;
+
+}
+
+
+message SetPlayerReadyReq {
+    enum DEF {
+        ID = 5026;
+    }
+	required int32 table_id = 1;//当前房间号
+	required bool is_ready = 2;//是否已经准备好
+}
+
+message SetPlayerReadyResp {
+    enum DEF {
+        ID = 5027;
+    }
+}
+
+//打牌中相关操作
+message BetActionReq {
+    enum DEF {
+        ID = 5028;
+    }
+	required int32 table_id = 1;//房间号
+	required BetAction action = 2;//动作种类
+	optional int32 gold = 3;//押注金币数量
+	optional int32 other = 4;//比牌时对方id
+}
+
+message BetActionResp {
+    enum DEF {
+        ID = 5029;
+    }
+    optional PlayerPokers pokers = 1;
+}
+
+message UpdateTablePlayerReq{
+	enum DEF {
+		ID = 5030;
+	}
+}
+
+message UpdateTablePlayerResp{
+	enum DEF {
+		ID = 5031;
+	}
+}
+
+
+
+//玩家玩牌过程中牌桌事件
+message TableEvent {
+    enum DEF {
+        ID = 5100;
+    }
+	required int32 table_id = 1;//房间号
+	required TableEventType event_type = 2;//玩家牌桌事件：进入房间还是离开房间
+	required int32 player = 3;
+	optional PlayerBrief player_brief = 4;//玩家信息
+	optional int32 seat = 5;//座位号
+	optional int32 kicker = 6; // 踢人者
+}
+
+//两人准备后的牌桌事件：可以开始倒计时
+message GamePlayerReadyEvent {
+    enum DEF {
+        ID = 5101;
+    }
+	required int32 table_id = 1;//房间号
+	required int32 player = 2;//玩家id
+    required bool is_ready = 3;
+}
+
+
+//开始倒计时
+message GameReadyEvent {
+    enum DEF {
+        ID = 5102;
+    }
+	required int32 table_id = 1;//房间号
+	required int32 seconds = 2;//倒计时时间
+}
+
+message GameCancelEvent {
+    enum DEF {
+        ID = 5103;
+    }
+	required int32 table_id = 1;
+}
+
+
+
+//倒计时结束，开始发牌
+message GameStartEvent {
+    enum DEF {
+        ID = 5104;
+    }
+    required int32 table_id = 1;//房间号
+	required int32 dealer = 2;//庄家
+	repeated PlayerGold player_golds = 4;//每个金币信息
+}
+		
+//玩牌轮流事件
+message GameTurnEvent {
+	enum DEF {
+        ID = 5105;
+    }
+	required int32 table_id = 1;//房间号
+	required int32 round = 2;//第几轮
+	required int32 current = 3;//当前说话的玩家
+}
+
+
+//游戏结束事件
+message GameOverEvent {
+    enum DEF {
+        ID = 5106;
+    }
+	required int32 table_id = 1;//房间号
+	required int32 winner = 2;//赢家id
+	required int64 gold = 3;//赢家赢的金币
+	required int64 fee = 4;//系统收取赢家的费用（个人所得税）
+	repeated PlayerPokers pokers = 5;//牌对象
+	repeated PlayerGold player_golds = 6;//所有玩家金币信息
+	optional LuckyGold lucky_gold = 7;
+}
+
+
+//比牌事件
+message BetActionEvent {
+    enum DEF {
+        ID = 5107;
+    }
+	required int32 table_id = 1;//房间号
+	required int32 player = 2;//玩家uid
+	required BetAction action = 3;//动作类型：跟注、看牌、比牌等
+	optional int64 action_gold = 4;//消耗金币
+	optional int64 bet_gold = 5;//本轮总消费金币
+	optional int64 gold = 6;//剩余金币
+	optional int32 other = 7;//对方
+	optional int32 compare_winner = 8;//比牌后赢家
+}
+
+
+

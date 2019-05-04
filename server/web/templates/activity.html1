@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>activity</title>
+</head>
+<body>
+<p>客户端传值过来的内容为：<span id="uid" data-uid="{{ uid }}">UID</span></p>
+
+<a href="#" data-id="1010">10元抽1次</a>
+|
+<a href="#" data-id="1011">5连抽45元</a>
+|
+<a href="#" data-id="1012">20连抽150元</a>
+
+<script src="https://cdn.bootcss.com/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
+    var url = 'http://zjh.wgchao.com:18080/activity_create'
+    var uid = geturlparam('uid')
+    var comment = geturlparam('comment')
+    console.log(uid+','+comment)
+    window.onload = function(){
+        $('a').click(function(){
+                var shop_id = $(this).data('id')
+                $.getJSON(url,{
+                    'shop_id':shop_id,
+                    'uid':uid,
+                    'comment':comment,
+                    d:new Date().getTime()
+                },function(data_str){
+                    data = JSON.parse(data_str)
+                    //callJavaMethod(data_str)
+                    console.log(data)
+                })
+        });
+    };
+
+    //供java调用的js函数，并且带参数过来
+	function  calllJsMethodByJava(java_str){
+        $('uid').text(java_str)
+	}
+
+	function callJavaMethod(s){//调用java函数，并且传json参数过去
+		window.callandroid.callFromJs(JSON.stringify(s));
+	}
+
+    function geturlparam(name){
+          var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+          var r = window.location.search.substr(1).match(reg);
+          if (r != null) return unescape(r[2]); return null;
+    }
+
+</script>
+</body>
+</html>

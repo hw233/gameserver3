@@ -1,0 +1,124 @@
+syntax = "proto2";
+package cardgame;
+
+import "struct.proto";
+import "constant.proto";
+option optimize_for = LITE_RUNTIME;
+option java_package = "com.zhili.cardgame.proto";
+option java_outer_classname = "Lottery";
+
+message LotteryOpenReq {
+    enum DEF {
+        ID = 5500;
+    }
+}
+
+message LotteryOpenResp {
+    enum DEF {
+        ID = 5501;
+    }
+    optional int32 live_seconds = 1;     // 推送时长
+    optional int32 remain_seconds = 2;         // 剩余秒数
+    optional int64 reward_gold_pool = 3;           // 彩金池
+    optional int32 last_baozi = 4;         // 上次豹子时间，单位：秒数
+    optional int32 remain_auto_bet = 5;     // 剩余自动投次数
+    optional LotteryPlayer last_big_winner = 6;  // 上次大赢家
+    repeated PokerTypeBet history = 7; // 开奖历史记录
+    repeated PokerTypeBet poker_type_bet = 8; //牌型投注
+    repeated PokerTypeBet my_bet = 9; //我投注类型及金额
+	repeated Poker win_poker = 10;
+    optional PokerType win_poker_type = 11;
+
+}
+
+message LotteryCloseReq{
+    enum DEF {
+        ID = 5502;
+    }
+}
+
+message LotteryCloseResp{
+    enum DEF {
+        ID = 5503;
+    }
+}
+
+message GoldChangeReq{
+    enum DEF {
+        ID = 5504;
+    }
+}
+
+message GoldChangeResp{
+    enum DEF {
+        ID = 5505;
+    }
+    optional int32 remain_seconds = 1;
+    repeated PokerTypeBet poker_type_bet = 2;
+}
+
+message GoldChangeEvent{
+    enum DEF {
+        ID = 5511;
+    }
+    optional int32 remain_seconds = 1;
+    repeated PokerTypeBet poker_type_bet = 2;
+}
+
+message OverEvent {  // 只发送给投注了的用户或者在指定时效内的用户
+    enum DEF {
+        ID = 5506;
+    }
+    repeated Poker win_poker = 1;
+    required PokerType win_poker_type = 2;
+    required int64 win_gold = 3;
+    required int64 reward_gold_pool = 4;           // 彩金池
+    required int32 last_baozi = 5;         // 上次豹子时间，单位：秒数
+    required LotteryPlayer last_big_winner = 6;
+	required int64 gold = 7;
+}
+
+message LotteryBetReq {
+    enum DEF {
+        ID = 5507;
+    }
+    repeated PokerTypeBet bet = 1;
+    required int32 auto_bet_number = 2; // 自动投， -1=取消自动投,0=正常投注
+}
+
+message LotteryBetResp{
+     enum DEF {
+         ID = 5508;
+     }
+     optional Result result = 1;
+}
+
+message BigRewardReq {
+    enum DEF {
+        ID = 5509;
+    }
+
+}
+
+message BigRewardResp{
+     enum DEF {
+         ID = 5510;
+     }
+     repeated LotteryPlayer players = 1;
+}
+
+//大奖记录
+message LotteryPlayer {
+    required int32 uid = 1;
+    required string avatar = 2;
+    required string nick = 3;
+    required int64 gold = 4;
+    optional int32 ctime = 5; // 查看大奖记录时用到
+    optional int32 sex = 6;
+    optional int32 vip_exp = 7;
+}
+
+message PokerTypeBet {
+    required PokerType poker_type = 1;
+    required int64 bet_gold = 2;
+}

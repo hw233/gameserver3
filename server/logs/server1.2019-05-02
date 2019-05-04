@@ -1,0 +1,28 @@
+MainThread 2019-05-02 09:49:09,899 INFO System Starting -> loading configuration system.ini
+MainThread 2019-05-02 09:49:09,903 INFO System Starting -> creating server instance and initializing
+MainThread 2019-05-02 09:49:09,903 INFO System Starting -> preparing starting 
+MainThread 2019-05-02 09:49:09,903 INFO Installing Services Now
+MainThread 2019-05-02 09:49:10,037 INFO [1minstall service ==> access.accessservice.AccessService(100)[0m
+MainThread 2019-05-02 09:49:10,166 INFO [1minstall service ==> main.mainservice.MainService(10)[0m
+MainThread 2019-05-02 09:49:10,169 INFO [1minstall service ==> goldflower.roomservice.RoomService(200)[0m
+MainThread 2019-05-02 09:49:10,235 INFO [1minstall service ==> goldflower.goldflowerservice.GoldFlowerService(210)[0m
+MainThread 2019-05-02 09:49:10,347 INFO [1minstall service ==> hall.hallservice.HallService(80)[0m
+MainThread 2019-05-02 09:49:10,366 INFO [1minstall service ==> hall.announcementservice.AnnouncementService(81)[0m
+MainThread 2019-05-02 09:49:10,374 INFO [1minstall service ==> hall.rankservice.RankService(82)[0m
+MainThread 2019-05-02 09:49:10,383 INFO [1minstall service ==> hall.chargeservice.ChargeService(83)[0m
+MainThread 2019-05-02 09:49:10,383 INFO Setup network configuration....
+MainThread 2019-05-02 09:49:10,384 INFO [31mSystem Started[0m
+MainThread 2019-05-02 11:10:42,469 INFO System Starting -> loading configuration system.ini
+MainThread 2019-05-02 11:10:42,472 INFO System Starting -> creating server instance and initializing
+MainThread 2019-05-02 11:10:42,472 INFO System Starting -> preparing starting 
+MainThread 2019-05-02 11:10:42,472 INFO Installing Services Now
+MainThread 2019-05-02 11:10:42,625 INFO [1minstall service ==> access.accessservice.AccessService(100)[0m
+MainThread 2019-05-02 11:10:42,730 INFO [1minstall service ==> main.mainservice.MainService(10)[0m
+MainThread 2019-05-02 11:10:42,733 INFO [1minstall service ==> goldflower.roomservice.RoomService(200)[0m
+MainThread 2019-05-02 11:10:42,777 INFO [1minstall service ==> goldflower.goldflowerservice.GoldFlowerService(210)[0m
+MainThread 2019-05-02 11:10:42,887 INFO [1minstall service ==> hall.hallservice.HallService(80)[0m
+MainThread 2019-05-02 11:10:42,906 INFO [1minstall service ==> hall.announcementservice.AnnouncementService(81)[0m
+MainThread 2019-05-02 11:10:42,915 INFO [1minstall service ==> hall.rankservice.RankService(82)[0m
+MainThread 2019-05-02 11:10:42,923 INFO [1minstall service ==> hall.chargeservice.ChargeService(83)[0m
+MainThread 2019-05-02 11:10:42,923 INFO Setup network configuration....
+MainThread 2019-05-02 11:10:42,923 INFO [31mSystem Started[0m

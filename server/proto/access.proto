@@ -1,0 +1,238 @@
+
+syntax = "proto2";
+
+package cardgame;
+
+
+import "struct.proto";
+
+option optimize_for = LITE_RUNTIME;
+
+option java_package = "com.zhili.cardgame.proto";  
+option java_outer_classname = "Access";  
+
+
+message LoginReq {
+	enum DEF{
+		ID = 1;
+	}
+	optional string mobile    = 1;
+	optional string device_id = 2;
+	optional string password    = 3;
+	optional string token = 4; //安全验证信息
+}
+
+message LoginResp {
+	enum DEF{
+		ID = 2;
+	}
+	optional int32 uid = 1;
+	optional int32 session = 2;
+	optional GameServer server = 3;
+}
+
+// 重置密码
+message ResetReq {
+	enum DEF{
+		ID = 20;
+	}
+	required string mobile          = 1;
+	required string password        = 2;
+	required string verify_code     = 3;
+}
+
+message ResetResp {
+	enum DEF{
+		ID = 21;
+	}
+}
+
+message FastLoginReq {
+	enum DEF{
+		ID = 3;
+	}
+	required string device_id = 1;
+	required string token = 2;//安全验证信息
+	required string channel = 3;
+	optional string imei = 4;
+	optional string imsi = 5;
+}
+
+message FastLoginResp {
+	enum DEF{
+		ID = 4;
+	}
+	optional int32 uid = 1;
+	optional int32 session = 2;
+	optional GameServer server = 3;
+}
+
+
+message GetVerifyCodeReq {
+	enum DEF{
+		ID = 7;
+	}
+	required string mobile = 1;
+	required string token = 2;
+}
+
+message GetVerifyCodeResp {
+	enum DEF{
+		ID = 8;
+	}
+}
+
+
+message RegisterReq {
+	enum DEF {
+		ID = 9;
+	}
+	required string mobile    = 1;
+	required string password   = 2;
+	required string verify_code = 3;
+	required string device_id = 4;
+	optional string channel = 5;
+	optional string imei = 6;
+	optional string imsi = 7;
+	
+}
+
+
+message RegisterResp {
+	enum DEF{
+		ID = 10;
+	}
+	optional int32 uid = 1;
+	optional int32 session = 2;
+	optional GameServer server = 3;
+}
+
+
+message ConnectGameServerReq {
+	enum DEF {
+		ID = 40;
+	}
+	required int32 session = 2;
+}
+
+message ConnectGameServerResp {
+	enum DEF {
+		ID = 41;
+	}
+	optional int64 server_time = 1;
+}
+
+message HeartbeatReq {
+	enum DEF {
+		ID = 100;
+	}
+}
+message HeartbeatResp {
+	enum DEF {
+		ID = 101;
+	}
+}
+
+message GetServerTimeReq {
+    enum DEF {
+		ID = 106;
+	}
+}
+
+message GetServerTimeResp {
+    enum DEF {
+		ID = 107;
+	}
+	optional int64 server_time = 1;
+}
+
+message QuitGameServerReq {
+    enum DEF {
+        ID = 110;
+    }
+}
+
+message QuitGameServerResp {
+    enum DEF {
+        ID = 111;
+    }
+}
+
+message OnlineReq {
+    enum DEF {
+        ID = 120;
+    }
+    required int32 uid = 1;
+    required int32 access_service_id = 2;
+}
+
+message OnlineResp {
+    enum DEF {
+        ID = 121;
+    }
+}
+
+message OfflineReq {
+	enum DEF {
+		ID = 130;
+	}
+	required int32 uid = 1;
+}
+
+message OfflineResp {
+	enum DEF {
+		ID = 131;
+	}
+}
+
+message CheckUpgradeReq {
+	enum DEF {
+		ID = 150;
+	}
+	required int32 version = 1;
+	optional string channel = 2;
+}
+
+message CheckUpgradeResp {
+	enum DEF {
+		ID = 151;
+	}
+	optional int32 new_version = 1;
+	optional string upgrade_info = 2;
+	optional bool force_clean = 3;
+}
+
+message GameResUpgradeReq {
+    enum DEF {
+		ID = 13;
+	}
+    required int32 ver = 1;
+}
+
+message GameResUpgradeResp {
+    enum DEF {
+		ID = 14;
+	}
+    required bool is_upgrade = 1;
+    optional string upgrade_url = 2;
+}
+
+
+
+
+
+
+
+
+message LogoutReq {
+	enum DEF {
+		ID = 5;
+	}
+}
+
+
+message LogoutResp {
+	enum DEF {
+		ID = 6;
+	}
+}

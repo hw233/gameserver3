@@ -1,0 +1,707 @@
+MainThread 2019-05-03 13:47:58,243 INFO System Starting -> loading configuration system.ini
+MainThread 2019-05-03 13:47:58,247 INFO System Starting -> creating server instance and initializing
+MainThread 2019-05-03 13:47:58,249 INFO System Starting -> preparing starting 
+MainThread 2019-05-03 13:47:58,249 INFO Installing Services Now
+MainThread 2019-05-03 13:47:58,444 INFO [1minstall service ==> access.accessservice.AccessService(100)[0m
+MainThread 2019-05-03 13:47:58,599 INFO [1minstall service ==> main.mainservice.MainService(10)[0m
+MainThread 2019-05-03 13:47:58,603 INFO [1minstall service ==> goldflower.roomservice.RoomService(200)[0m
+MainThread 2019-05-03 13:47:58,697 INFO [1minstall service ==> goldflower.goldflowerservice.GoldFlowerService(210)[0m
+MainThread 2019-05-03 13:47:58,816 INFO [1minstall service ==> hall.hallservice.HallService(80)[0m
+MainThread 2019-05-03 13:47:58,836 INFO [1minstall service ==> hall.announcementservice.AnnouncementService(81)[0m
+MainThread 2019-05-03 13:47:58,843 INFO [1minstall service ==> hall.rankservice.RankService(82)[0m
+MainThread 2019-05-03 13:47:58,853 INFO [1minstall service ==> hall.chargeservice.ChargeService(83)[0m
+MainThread 2019-05-03 13:47:58,853 INFO Setup network configuration....
+MainThread 2019-05-03 13:47:58,854 INFO [31mSystem Started[0m
+MainThread 2019-05-03 14:00:14,289 INFO System Starting -> loading configuration system.ini
+MainThread 2019-05-03 14:00:14,291 INFO System Starting -> creating server instance and initializing
+MainThread 2019-05-03 14:00:14,292 INFO System Starting -> preparing starting 
+MainThread 2019-05-03 14:00:14,292 INFO Installing Services Now
+MainThread 2019-05-03 14:00:14,848 INFO [1minstall service ==> access.accessservice.AccessService(100)[0m
+MainThread 2019-05-03 14:00:15,307 INFO [1minstall service ==> main.mainservice.MainService(10)[0m
+MainThread 2019-05-03 14:00:15,309 INFO [1minstall service ==> goldflower.roomservice.RoomService(200)[0m
+MainThread 2019-05-03 14:00:15,509 INFO [1minstall service ==> goldflower.goldflowerservice.GoldFlowerService(210)[0m
+MainThread 2019-05-03 14:00:15,588 INFO [1minstall service ==> hall.hallservice.HallService(80)[0m
+MainThread 2019-05-03 14:00:15,608 INFO [1minstall service ==> hall.announcementservice.AnnouncementService(81)[0m
+MainThread 2019-05-03 14:00:15,613 INFO [1minstall service ==> hall.rankservice.RankService(82)[0m
+MainThread 2019-05-03 14:00:15,619 INFO [1minstall service ==> hall.chargeservice.ChargeService(83)[0m
+MainThread 2019-05-03 14:00:15,619 INFO Setup network configuration....
+MainThread 2019-05-03 14:00:15,619 INFO [31mSystem Started[0m
+MainThread 2019-05-03 14:21:12,730 INFO System Starting -> loading configuration system.ini
+MainThread 2019-05-03 14:21:12,731 INFO System Starting -> creating server instance and initializing
+MainThread 2019-05-03 14:21:12,732 INFO System Starting -> preparing starting 
+MainThread 2019-05-03 14:21:12,732 INFO Installing Services Now
+MainThread 2019-05-03 14:21:12,915 INFO [1minstall service ==> access.accessservice.AccessService(100)[0m
+MainThread 2019-05-03 14:21:13,028 INFO [1minstall service ==> main.mainservice.MainService(10)[0m
+MainThread 2019-05-03 14:21:13,030 INFO [1minstall service ==> goldflower.roomservice.RoomService(200)[0m
+MainThread 2019-05-03 14:21:13,118 INFO [1minstall service ==> goldflower.goldflowerservice.GoldFlowerService(210)[0m
+MainThread 2019-05-03 14:21:13,202 INFO [1minstall service ==> hall.hallservice.HallService(80)[0m
+MainThread 2019-05-03 14:21:13,222 INFO [1minstall service ==> hall.announcementservice.AnnouncementService(81)[0m
+MainThread 2019-05-03 14:21:13,227 INFO [1minstall service ==> hall.rankservice.RankService(82)[0m
+MainThread 2019-05-03 14:21:13,233 INFO [1minstall service ==> hall.chargeservice.ChargeService(83)[0m
+MainThread 2019-05-03 14:21:13,234 INFO Setup network configuration....
+MainThread 2019-05-03 14:21:13,234 INFO [31mSystem Started[0m
+DummyThread-1 2019-05-03 14:22:06,704 INFO a client connecting now .....
+DummyThread-1 2019-05-03 14:22:17,765 INFO disconnected now ---> no data
+DummyThread-1 2019-05-03 14:22:17,766 INFO finally******************************>
+DummyThread-2 2019-05-03 14:22:17,769 INFO ----> User Quit Now: -1
+MainThread 2019-05-03 14:22:33,326 INFO System Starting -> loading configuration system.ini
+MainThread 2019-05-03 14:22:33,328 INFO System Starting -> creating server instance and initializing
+MainThread 2019-05-03 14:22:33,328 INFO System Starting -> preparing starting 
+MainThread 2019-05-03 14:22:33,328 INFO Installing Services Now
+MainThread 2019-05-03 14:22:33,513 INFO [1minstall service ==> access.accessservice.AccessService(100)[0m
+MainThread 2019-05-03 14:22:33,623 INFO [1minstall service ==> main.mainservice.MainService(10)[0m
+MainThread 2019-05-03 14:22:33,625 INFO [1minstall service ==> goldflower.roomservice.RoomService(200)[0m
+MainThread 2019-05-03 14:22:33,727 INFO [1minstall service ==> goldflower.goldflowerservice.GoldFlowerService(210)[0m
+MainThread 2019-05-03 14:22:33,807 INFO [1minstall service ==> hall.hallservice.HallService(80)[0m
+MainThread 2019-05-03 14:22:33,826 INFO [1minstall service ==> hall.announcementservice.AnnouncementService(81)[0m
+MainThread 2019-05-03 14:22:33,832 INFO [1minstall service ==> hall.rankservice.RankService(82)[0m
+MainThread 2019-05-03 14:22:33,838 INFO [1minstall service ==> hall.chargeservice.ChargeService(83)[0m
+MainThread 2019-05-03 14:22:33,838 INFO Setup network configuration....
+MainThread 2019-05-03 14:22:33,838 INFO [31mSystem Started[0m
+DummyThread-1 2019-05-03 14:22:53,950 INFO a client connecting now .....
+DummyThread-1 2019-05-03 14:22:53,951 INFO except******************************>
+DummyThread-1 2019-05-03 14:22:53,952 INFO finally******************************>
+DummyThread-2 2019-05-03 14:22:53,953 INFO ----> User Quit Now: -1
+DummyThread-3 2019-05-03 14:22:54,566 INFO a client connecting now .....
+DummyThread-3 2019-05-03 14:22:54,592 INFO except******************************>
+DummyThread-3 2019-05-03 14:22:54,593 INFO finally******************************>
+DummyThread-4 2019-05-03 14:22:54,593 INFO ----> User Quit Now: -1
+MainThread 2019-05-03 14:23:03,452 INFO System Starting -> loading configuration system.ini
+MainThread 2019-05-03 14:23:03,454 INFO System Starting -> creating server instance and initializing
+MainThread 2019-05-03 14:23:03,455 INFO System Starting -> preparing starting 
+MainThread 2019-05-03 14:23:03,455 INFO Installing Services Now
+MainThread 2019-05-03 14:23:03,675 INFO [1minstall service ==> access.accessservice.AccessService(100)[0m
+MainThread 2019-05-03 14:23:03,782 INFO [1minstall service ==> main.mainservice.MainService(10)[0m
+MainThread 2019-05-03 14:23:03,783 INFO [1minstall service ==> goldflower.roomservice.RoomService(200)[0m
+MainThread 2019-05-03 14:23:03,876 INFO [1minstall service ==> goldflower.goldflowerservice.GoldFlowerService(210)[0m
+MainThread 2019-05-03 14:23:03,964 INFO [1minstall service ==> hall.hallservice.HallService(80)[0m
+MainThread 2019-05-03 14:23:03,984 INFO [1minstall service ==> hall.announcementservice.AnnouncementService(81)[0m
+MainThread 2019-05-03 14:23:03,991 INFO [1minstall service ==> hall.rankservice.RankService(82)[0m
+MainThread 2019-05-03 14:23:03,997 INFO [1minstall service ==> hall.chargeservice.ChargeService(83)[0m
+MainThread 2019-05-03 14:23:03,997 INFO Setup network configuration....
+MainThread 2019-05-03 14:23:03,998 INFO [31mSystem Started[0m
+DummyThread-1 2019-05-03 14:23:07,520 INFO a client connecting now .....
+DummyThread-1 2019-05-03 14:23:07,546 INFO except******************************>
+DummyThread-1 2019-05-03 14:23:07,547 INFO finally******************************>
+DummyThread-2 2019-05-03 14:23:07,551 INFO ----> User Quit Now: -1
+DummyThread-3 2019-05-03 14:23:37,756 INFO a client connecting now .....
+DummyThread-3 2019-05-03 14:23:37,756 INFO except******************************>
+DummyThread-3 2019-05-03 14:23:37,757 INFO finally******************************>
+DummyThread-4 2019-05-03 14:23:37,757 INFO ----> User Quit Now: -1
+DummyThread-5 2019-05-03 14:23:38,310 INFO a client connecting now .....
+DummyThread-5 2019-05-03 14:23:38,338 INFO except******************************>
+DummyThread-5 2019-05-03 14:23:38,339 INFO finally******************************>
+DummyThread-6 2019-05-03 14:23:38,339 INFO ----> User Quit Now: -1
+MainThread 2019-05-03 14:23:49,111 INFO System Starting -> loading configuration system.ini
+MainThread 2019-05-03 14:23:49,113 INFO System Starting -> creating server instance and initializing
+MainThread 2019-05-03 14:23:49,114 INFO System Starting -> preparing starting 
+MainThread 2019-05-03 14:23:49,114 INFO Installing Services Now
+MainThread 2019-05-03 14:23:49,269 INFO [1minstall service ==> access.accessservice.AccessService(100)[0m
+MainThread 2019-05-03 14:23:49,371 INFO [1minstall service ==> main.mainservice.MainService(10)[0m
+MainThread 2019-05-03 14:23:49,372 INFO [1minstall service ==> goldflower.roomservice.RoomService(200)[0m
+MainThread 2019-05-03 14:23:49,448 INFO [1minstall service ==> goldflower.goldflowerservice.GoldFlowerService(210)[0m
+MainThread 2019-05-03 14:23:49,532 INFO [1minstall service ==> hall.hallservice.HallService(80)[0m
+MainThread 2019-05-03 14:23:49,552 INFO [1minstall service ==> hall.announcementservice.AnnouncementService(81)[0m
+MainThread 2019-05-03 14:23:49,559 INFO [1minstall service ==> hall.rankservice.RankService(82)[0m
+MainThread 2019-05-03 14:23:49,565 INFO [1minstall service ==> hall.chargeservice.ChargeService(83)[0m
+MainThread 2019-05-03 14:23:49,565 INFO Setup network configuration....
+MainThread 2019-05-03 14:23:49,565 INFO [31mSystem Started[0m
+DummyThread-1 2019-05-03 14:23:52,784 INFO a client connecting now .....
+DummyThread-1 2019-05-03 14:23:52,817 INFO except******************************>
+DummyThread-1 2019-05-03 14:23:52,817 INFO finally******************************>
+DummyThread-2 2019-05-03 14:23:52,820 INFO ----> User Quit Now: -1
+MainThread 2019-05-03 14:24:52,875 INFO System Starting -> loading configuration system.ini
+MainThread 2019-05-03 14:24:52,877 INFO System Starting -> creating server instance and initializing
+MainThread 2019-05-03 14:24:52,878 INFO System Starting -> preparing starting 
+MainThread 2019-05-03 14:24:52,878 INFO Installing Services Now
+MainThread 2019-05-03 14:24:53,045 INFO [1minstall service ==> access.accessservice.AccessService(100)[0m
+MainThread 2019-05-03 14:24:53,172 INFO [1minstall service ==> main.mainservice.MainService(10)[0m
+MainThread 2019-05-03 14:24:53,174 INFO [1minstall service ==> goldflower.roomservice.RoomService(200)[0m
+MainThread 2019-05-03 14:24:53,252 INFO [1minstall service ==> goldflower.goldflowerservice.GoldFlowerService(210)[0m
+MainThread 2019-05-03 14:24:53,334 INFO [1minstall service ==> hall.hallservice.HallService(80)[0m
+MainThread 2019-05-03 14:24:53,354 INFO [1minstall service ==> hall.announcementservice.AnnouncementService(81)[0m
+MainThread 2019-05-03 14:24:53,360 INFO [1minstall service ==> hall.rankservice.RankService(82)[0m
+MainThread 2019-05-03 14:24:53,366 INFO [1minstall service ==> hall.chargeservice.ChargeService(83)[0m
+MainThread 2019-05-03 14:24:53,366 INFO Setup network configuration....
+MainThread 2019-05-03 14:24:53,366 INFO [31mSystem Started[0m
+DummyThread-1 2019-05-03 14:24:56,253 INFO a client connecting now .....
+DummyThread-1 2019-05-03 14:24:56,282 INFO except******************************>
+DummyThread-1 2019-05-03 14:24:56,283 INFO finally******************************>
+DummyThread-2 2019-05-03 14:24:56,284 INFO ----> User Quit Now: -1
+MainThread 2019-05-03 14:25:39,542 INFO System Starting -> loading configuration system.ini
+MainThread 2019-05-03 14:25:39,544 INFO System Starting -> creating server instance and initializing
+MainThread 2019-05-03 14:25:39,544 INFO System Starting -> preparing starting 
+MainThread 2019-05-03 14:25:39,544 INFO Installing Services Now
+MainThread 2019-05-03 14:25:40,273 INFO [1minstall service ==> access.accessservice.AccessService(100)[0m
+MainThread 2019-05-03 14:25:40,643 INFO [1minstall service ==> main.mainservice.MainService(10)[0m
+MainThread 2019-05-03 14:25:40,644 INFO [1minstall service ==> goldflower.roomservice.RoomService(200)[0m
+MainThread 2019-05-03 14:25:41,118 INFO [1minstall service ==> goldflower.goldflowerservice.GoldFlowerService(210)[0m
+MainThread 2019-05-03 14:25:41,214 INFO [1minstall service ==> hall.hallservice.HallService(80)[0m
+MainThread 2019-05-03 14:25:41,236 INFO [1minstall service ==> hall.announcementservice.AnnouncementService(81)[0m
+MainThread 2019-05-03 14:25:41,242 INFO [1minstall service ==> hall.rankservice.RankService(82)[0m
+MainThread 2019-05-03 14:25:41,249 INFO [1minstall service ==> hall.chargeservice.ChargeService(83)[0m
+MainThread 2019-05-03 14:25:41,249 INFO Setup network configuration....
+MainThread 2019-05-03 14:25:41,249 INFO [31mSystem Started[0m
+DummyThread-1 2019-05-03 14:25:45,650 INFO a client connecting now .....
+DummyThread-1 2019-05-03 14:25:45,655 INFO except******************************>
+DummyThread-1 2019-05-03 14:25:45,655 INFO finally******************************>
+DummyThread-2 2019-05-03 14:25:45,658 INFO ----> User Quit Now: -1
+DummyThread-3 2019-05-03 14:25:46,989 INFO a client connecting now .....
+DummyThread-3 2019-05-03 14:25:47,015 INFO except******************************>
+DummyThread-3 2019-05-03 14:25:47,016 INFO finally******************************>
+DummyThread-4 2019-05-03 14:25:47,016 INFO ----> User Quit Now: -1
+MainThread 2019-05-03 14:29:18,777 INFO System Starting -> loading configuration system.ini
+MainThread 2019-05-03 14:29:18,779 INFO System Starting -> creating server instance and initializing
+MainThread 2019-05-03 14:29:18,780 INFO System Starting -> preparing starting 
+MainThread 2019-05-03 14:29:18,780 INFO Installing Services Now
+MainThread 2019-05-03 14:29:19,447 INFO [1minstall service ==> access.accessservice.AccessService(100)[0m
+MainThread 2019-05-03 14:29:19,644 INFO [1minstall service ==> main.mainservice.MainService(10)[0m
+MainThread 2019-05-03 14:29:19,647 INFO [1minstall service ==> goldflower.roomservice.RoomService(200)[0m
+MainThread 2019-05-03 14:29:20,094 INFO [1minstall service ==> goldflower.goldflowerservice.GoldFlowerService(210)[0m
+MainThread 2019-05-03 14:29:20,208 INFO [1minstall service ==> hall.hallservice.HallService(80)[0m
+MainThread 2019-05-03 14:29:20,227 INFO [1minstall service ==> hall.announcementservice.AnnouncementService(81)[0m
+MainThread 2019-05-03 14:29:20,234 INFO [1minstall service ==> hall.rankservice.RankService(82)[0m
+MainThread 2019-05-03 14:29:20,243 INFO [1minstall service ==> hall.chargeservice.ChargeService(83)[0m
+MainThread 2019-05-03 14:29:20,243 INFO Setup network configuration....
+MainThread 2019-05-03 14:29:20,243 INFO [31mSystem Started[0m
+DummyThread-1 2019-05-03 14:29:29,493 INFO a client connecting now .....
+DummyThread-1 2019-05-03 14:29:29,519 INFO except******************************>
+DummyThread-1 2019-05-03 14:29:29,520 INFO finally******************************>
+DummyThread-2 2019-05-03 14:29:29,521 INFO ----> User Quit Now: -1
+MainThread 2019-05-03 14:29:49,843 INFO System Starting -> loading configuration system.ini
+MainThread 2019-05-03 14:29:49,845 INFO System Starting -> creating server instance and initializing
+MainThread 2019-05-03 14:29:49,845 INFO System Starting -> preparing starting 
+MainThread 2019-05-03 14:29:49,845 INFO Installing Services Now
+MainThread 2019-05-03 14:29:50,030 INFO [1minstall service ==> access.accessservice.AccessService(100)[0m
+MainThread 2019-05-03 14:29:50,146 INFO [1minstall service ==> main.mainservice.MainService(10)[0m
+MainThread 2019-05-03 14:29:50,148 INFO [1minstall service ==> goldflower.roomservice.RoomService(200)[0m
+MainThread 2019-05-03 14:29:50,209 INFO [1minstall service ==> goldflower.goldflowerservice.GoldFlowerService(210)[0m
+MainThread 2019-05-03 14:29:50,292 INFO [1minstall service ==> hall.hallservice.HallService(80)[0m
+MainThread 2019-05-03 14:29:50,311 INFO [1minstall service ==> hall.announcementservice.AnnouncementService(81)[0m
+MainThread 2019-05-03 14:29:50,318 INFO [1minstall service ==> hall.rankservice.RankService(82)[0m
+MainThread 2019-05-03 14:29:50,324 INFO [1minstall service ==> hall.chargeservice.ChargeService(83)[0m
+MainThread 2019-05-03 14:29:50,325 INFO Setup network configuration....
+MainThread 2019-05-03 14:29:50,325 INFO [31mSystem Started[0m
+DummyThread-1 2019-05-03 14:29:53,271 INFO a client connecting now .....
+DummyThread-1 2019-05-03 14:29:53,298 INFO except******************************>
+DummyThread-1 2019-05-03 14:29:53,299 INFO finally******************************>
+DummyThread-2 2019-05-03 14:29:53,303 INFO ----> User Quit Now: -1
+MainThread 2019-05-03 14:30:20,994 INFO System Starting -> loading configuration system.ini
+MainThread 2019-05-03 14:30:20,996 INFO System Starting -> creating server instance and initializing
+MainThread 2019-05-03 14:30:20,997 INFO System Starting -> preparing starting 
+MainThread 2019-05-03 14:30:20,997 INFO Installing Services Now
+MainThread 2019-05-03 14:30:21,166 INFO [1minstall service ==> access.accessservice.AccessService(100)[0m
+MainThread 2019-05-03 14:30:21,269 INFO [1minstall service ==> main.mainservice.MainService(10)[0m
+MainThread 2019-05-03 14:30:21,272 INFO [1minstall service ==> goldflower.roomservice.RoomService(200)[0m
+MainThread 2019-05-03 14:30:21,348 INFO [1minstall service ==> goldflower.goldflowerservice.GoldFlowerService(210)[0m
+MainThread 2019-05-03 14:30:21,430 INFO [1minstall service ==> hall.hallservice.HallService(80)[0m
+MainThread 2019-05-03 14:30:21,449 INFO [1minstall service ==> hall.announcementservice.AnnouncementService(81)[0m
+MainThread 2019-05-03 14:30:21,455 INFO [1minstall service ==> hall.rankservice.RankService(82)[0m
+MainThread 2019-05-03 14:30:21,461 INFO [1minstall service ==> hall.chargeservice.ChargeService(83)[0m
+MainThread 2019-05-03 14:30:21,461 INFO Setup network configuration....
+MainThread 2019-05-03 14:30:21,462 INFO [31mSystem Started[0m
+DummyThread-1 2019-05-03 14:30:23,405 INFO a client connecting now .....
+DummyThread-1 2019-05-03 14:30:23,440 INFO bytearray(b'\x00\x00\x00\x04\x00\x00\x00(\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\x10\xe7\x82\x03')
+DummyThread-1 2019-05-03 14:30:23,440 INFO except******************************>
+DummyThread-1 2019-05-03 14:30:23,441 INFO finally******************************>
+DummyThread-2 2019-05-03 14:30:23,442 INFO ----> User Quit Now: -1
+MainThread 2019-05-03 14:44:27,879 INFO System Starting -> loading configuration system.ini
+MainThread 2019-05-03 14:44:27,881 INFO System Starting -> creating server instance and initializing
+MainThread 2019-05-03 14:44:27,882 INFO System Starting -> preparing starting 
+MainThread 2019-05-03 14:44:27,882 INFO Installing Services Now
+MainThread 2019-05-03 14:44:28,290 INFO [1minstall service ==> access.accessservice.AccessService(100)[0m
+MainThread 2019-05-03 14:44:28,451 INFO [1minstall service ==> main.mainservice.MainService(10)[0m
+MainThread 2019-05-03 14:44:28,453 INFO [1minstall service ==> goldflower.roomservice.RoomService(200)[0m
+MainThread 2019-05-03 14:44:28,516 INFO [1minstall service ==> goldflower.goldflowerservice.GoldFlowerService(210)[0m
+MainThread 2019-05-03 14:44:28,597 INFO [1minstall service ==> hall.hallservice.HallService(80)[0m
+MainThread 2019-05-03 14:44:28,616 INFO [1minstall service ==> hall.announcementservice.AnnouncementService(81)[0m
+MainThread 2019-05-03 14:44:28,621 INFO [1minstall service ==> hall.rankservice.RankService(82)[0m
+MainThread 2019-05-03 14:44:28,628 INFO [1minstall service ==> hall.chargeservice.ChargeService(83)[0m
+MainThread 2019-05-03 14:44:28,629 INFO Setup network configuration....
+MainThread 2019-05-03 14:44:28,629 INFO [31mSystem Started[0m
+DummyThread-1 2019-05-03 14:44:37,889 INFO a client connecting now .....
+DummyThread-1 2019-05-03 14:44:37,920 INFO except******************************>
+DummyThread-1 2019-05-03 14:44:37,920 INFO finally******************************>
+DummyThread-2 2019-05-03 14:44:37,923 INFO ----> User Quit Now: -1
+DummyThread-3 2019-05-03 14:48:01,204 INFO a client connecting now .....
+DummyThread-3 2019-05-03 14:48:01,206 INFO except******************************>
+DummyThread-3 2019-05-03 14:48:01,207 INFO finally******************************>
+DummyThread-4 2019-05-03 14:48:01,207 INFO ----> User Quit Now: -1
+DummyThread-5 2019-05-03 14:48:01,854 INFO a client connecting now .....
+DummyThread-5 2019-05-03 14:48:01,884 INFO except******************************>
+DummyThread-5 2019-05-03 14:48:01,885 INFO finally******************************>
+DummyThread-6 2019-05-03 14:48:01,885 INFO ----> User Quit Now: -1
+MainThread 2019-05-03 14:48:05,097 INFO System Starting -> loading configuration system.ini
+MainThread 2019-05-03 14:48:05,100 INFO System Starting -> creating server instance and initializing
+MainThread 2019-05-03 14:48:05,101 INFO System Starting -> preparing starting 
+MainThread 2019-05-03 14:48:05,101 INFO Installing Services Now
+MainThread 2019-05-03 14:48:05,278 INFO [1minstall service ==> access.accessservice.AccessService(100)[0m
+MainThread 2019-05-03 14:48:05,394 INFO [1minstall service ==> main.mainservice.MainService(10)[0m
+MainThread 2019-05-03 14:48:05,396 INFO [1minstall service ==> goldflower.roomservice.RoomService(200)[0m
+MainThread 2019-05-03 14:48:05,500 INFO [1minstall service ==> goldflower.goldflowerservice.GoldFlowerService(210)[0m
+MainThread 2019-05-03 14:48:05,583 INFO [1minstall service ==> hall.hallservice.HallService(80)[0m
+MainThread 2019-05-03 14:48:05,604 INFO [1minstall service ==> hall.announcementservice.AnnouncementService(81)[0m
+MainThread 2019-05-03 14:48:05,611 INFO [1minstall service ==> hall.rankservice.RankService(82)[0m
+MainThread 2019-05-03 14:48:05,616 INFO [1minstall service ==> hall.chargeservice.ChargeService(83)[0m
+MainThread 2019-05-03 14:48:05,617 INFO Setup network configuration....
+MainThread 2019-05-03 14:48:05,617 INFO [31mSystem Started[0m
+DummyThread-1 2019-05-03 14:48:08,026 INFO a client connecting now .....
+DummyThread-1 2019-05-03 14:48:08,050 INFO except******************************>
+DummyThread-1 2019-05-03 14:48:08,051 INFO finally******************************>
+DummyThread-2 2019-05-03 14:48:08,053 INFO ----> User Quit Now: -1
+MainThread 2019-05-03 14:49:16,600 INFO System Starting -> loading configuration system.ini
+MainThread 2019-05-03 14:49:16,602 INFO System Starting -> creating server instance and initializing
+MainThread 2019-05-03 14:49:16,603 INFO System Starting -> preparing starting 
+MainThread 2019-05-03 14:49:16,603 INFO Installing Services Now
+MainThread 2019-05-03 14:49:16,763 INFO [1minstall service ==> access.accessservice.AccessService(100)[0m
+MainThread 2019-05-03 14:49:16,875 INFO [1minstall service ==> main.mainservice.MainService(10)[0m
+MainThread 2019-05-03 14:49:16,876 INFO [1minstall service ==> goldflower.roomservice.RoomService(200)[0m
+MainThread 2019-05-03 14:49:16,963 INFO [1minstall service ==> goldflower.goldflowerservice.GoldFlowerService(210)[0m
+MainThread 2019-05-03 14:49:17,045 INFO [1minstall service ==> hall.hallservice.HallService(80)[0m
+MainThread 2019-05-03 14:49:17,064 INFO [1minstall service ==> hall.announcementservice.AnnouncementService(81)[0m
+MainThread 2019-05-03 14:49:17,070 INFO [1minstall service ==> hall.rankservice.RankService(82)[0m
+MainThread 2019-05-03 14:49:17,077 INFO [1minstall service ==> hall.chargeservice.ChargeService(83)[0m
+MainThread 2019-05-03 14:49:17,077 INFO Setup network configuration....
+MainThread 2019-05-03 14:49:17,077 INFO [31mSystem Started[0m
+DummyThread-1 2019-05-03 14:49:19,314 INFO a client connecting now .....
+DummyThread-1 2019-05-03 14:49:19,332 INFO except******************************>
+DummyThread-1 2019-05-03 14:49:19,332 INFO finally******************************>
+DummyThread-2 2019-05-03 14:49:19,333 INFO ----> User Quit Now: -1
+MainThread 2019-05-03 14:50:04,491 INFO System Starting -> loading configuration system.ini
+MainThread 2019-05-03 14:50:04,494 INFO System Starting -> creating server instance and initializing
+MainThread 2019-05-03 14:50:04,495 INFO System Starting -> preparing starting 
+MainThread 2019-05-03 14:50:04,495 INFO Installing Services Now
+MainThread 2019-05-03 14:50:04,695 INFO [1minstall service ==> access.accessservice.AccessService(100)[0m
+MainThread 2019-05-03 14:50:04,815 INFO [1minstall service ==> main.mainservice.MainService(10)[0m
+MainThread 2019-05-03 14:50:04,816 INFO [1minstall service ==> goldflower.roomservice.RoomService(200)[0m
+MainThread 2019-05-03 14:50:04,936 INFO [1minstall service ==> goldflower.goldflowerservice.GoldFlowerService(210)[0m
+MainThread 2019-05-03 14:50:05,028 INFO [1minstall service ==> hall.hallservice.HallService(80)[0m
+MainThread 2019-05-03 14:50:05,051 INFO [1minstall service ==> hall.announcementservice.AnnouncementService(81)[0m
+MainThread 2019-05-03 14:50:05,058 INFO [1minstall service ==> hall.rankservice.RankService(82)[0m
+MainThread 2019-05-03 14:50:05,066 INFO [1minstall service ==> hall.chargeservice.ChargeService(83)[0m
+MainThread 2019-05-03 14:50:05,066 INFO Setup network configuration....
+MainThread 2019-05-03 14:50:05,067 INFO [31mSystem Started[0m
+DummyThread-1 2019-05-03 14:50:14,038 INFO a client connecting now .....
+DummyThread-1 2019-05-03 14:50:14,068 INFO except******************************>
+DummyThread-1 2019-05-03 14:50:14,069 INFO finally******************************>
+DummyThread-2 2019-05-03 14:50:14,070 INFO ----> User Quit Now: -1
+MainThread 2019-05-03 15:54:46,467 INFO System Starting -> loading configuration system.ini
+MainThread 2019-05-03 15:54:46,468 INFO System Starting -> creating server instance and initializing
+MainThread 2019-05-03 15:54:46,469 INFO System Starting -> preparing starting 
+MainThread 2019-05-03 15:54:46,469 INFO Installing Services Now
+MainThread 2019-05-03 15:54:46,711 INFO [1minstall service ==> access.accessservice.AccessService(100)[0m
+MainThread 2019-05-03 15:54:46,831 INFO [1minstall service ==> main.mainservice.MainService(10)[0m
+MainThread 2019-05-03 15:54:46,834 INFO [1minstall service ==> goldflower.roomservice.RoomService(200)[0m
+MainThread 2019-05-03 15:54:46,914 INFO [1minstall service ==> goldflower.goldflowerservice.GoldFlowerService(210)[0m
+MainThread 2019-05-03 15:54:47,001 INFO [1minstall service ==> hall.hallservice.HallService(80)[0m
+MainThread 2019-05-03 15:54:47,019 INFO [1minstall service ==> hall.announcementservice.AnnouncementService(81)[0m
+MainThread 2019-05-03 15:54:47,026 INFO [1minstall service ==> hall.rankservice.RankService(82)[0m
+MainThread 2019-05-03 15:54:47,036 INFO [1minstall service ==> hall.chargeservice.ChargeService(83)[0m
+MainThread 2019-05-03 15:54:47,037 INFO Setup network configuration....
+MainThread 2019-05-03 15:54:47,037 INFO [31mSystem Started[0m
+DummyThread-1 2019-05-03 15:54:58,882 INFO a client connecting now .....
+DummyThread-1 2019-05-03 15:54:58,885 INFO except******************************>
+DummyThread-1 2019-05-03 15:54:58,886 INFO finally******************************>
+DummyThread-2 2019-05-03 15:54:58,888 INFO ----> User Quit Now: -1
+MainThread 2019-05-03 16:01:31,163 INFO System Starting -> loading configuration system.ini
+MainThread 2019-05-03 16:01:31,165 INFO System Starting -> creating server instance and initializing
+MainThread 2019-05-03 16:01:31,166 INFO System Starting -> preparing starting 
+MainThread 2019-05-03 16:01:31,166 INFO Installing Services Now
+MainThread 2019-05-03 16:01:31,611 INFO [1minstall service ==> access.accessservice.AccessService(100)[0m
+MainThread 2019-05-03 16:01:31,949 INFO [1minstall service ==> main.mainservice.MainService(10)[0m
+MainThread 2019-05-03 16:01:31,951 INFO [1minstall service ==> goldflower.roomservice.RoomService(200)[0m
+MainThread 2019-05-03 16:01:32,161 INFO [1minstall service ==> goldflower.goldflowerservice.GoldFlowerService(210)[0m
+MainThread 2019-05-03 16:01:32,250 INFO [1minstall service ==> hall.hallservice.HallService(80)[0m
+MainThread 2019-05-03 16:01:32,270 INFO [1minstall service ==> hall.announcementservice.AnnouncementService(81)[0m
+MainThread 2019-05-03 16:01:32,278 INFO [1minstall service ==> hall.rankservice.RankService(82)[0m
+MainThread 2019-05-03 16:01:32,287 INFO [1minstall service ==> hall.chargeservice.ChargeService(83)[0m
+MainThread 2019-05-03 16:01:32,287 INFO Setup network configuration....
+MainThread 2019-05-03 16:01:32,287 INFO [31mSystem Started[0m
+DummyThread-1 2019-05-03 16:01:34,791 INFO a client connecting now .....
+DummyThread-1 2019-05-03 16:01:34,791 INFO except******************************>
+DummyThread-1 2019-05-03 16:01:34,792 INFO finally******************************>
+DummyThread-2 2019-05-03 16:01:34,793 INFO ----> User Quit Now: -1
+MainThread 2019-05-03 16:01:55,929 INFO System Starting -> loading configuration system.ini
+MainThread 2019-05-03 16:01:55,931 INFO System Starting -> creating server instance and initializing
+MainThread 2019-05-03 16:01:55,931 INFO System Starting -> preparing starting 
+MainThread 2019-05-03 16:01:55,931 INFO Installing Services Now
+MainThread 2019-05-03 16:01:56,077 INFO [1minstall service ==> access.accessservice.AccessService(100)[0m
+MainThread 2019-05-03 16:01:56,186 INFO [1minstall service ==> main.mainservice.MainService(10)[0m
+MainThread 2019-05-03 16:01:56,187 INFO [1minstall service ==> goldflower.roomservice.RoomService(200)[0m
+MainThread 2019-05-03 16:01:56,279 INFO [1minstall service ==> goldflower.goldflowerservice.GoldFlowerService(210)[0m
+MainThread 2019-05-03 16:01:56,359 INFO [1minstall service ==> hall.hallservice.HallService(80)[0m
+MainThread 2019-05-03 16:01:56,377 INFO [1minstall service ==> hall.announcementservice.AnnouncementService(81)[0m
+MainThread 2019-05-03 16:01:56,382 INFO [1minstall service ==> hall.rankservice.RankService(82)[0m
+MainThread 2019-05-03 16:01:56,389 INFO [1minstall service ==> hall.chargeservice.ChargeService(83)[0m
+MainThread 2019-05-03 16:01:56,389 INFO Setup network configuration....
+MainThread 2019-05-03 16:01:56,389 INFO [31mSystem Started[0m
+DummyThread-1 2019-05-03 16:01:58,112 INFO a client connecting now .....
+DummyThread-1 2019-05-03 16:01:58,113 INFO except******************************>
+DummyThread-1 2019-05-03 16:01:58,114 INFO finally******************************>
+DummyThread-2 2019-05-03 16:01:58,114 INFO ----> User Quit Now: -1
+MainThread 2019-05-03 22:47:23,968 INFO System Starting -> loading configuration system.ini
+MainThread 2019-05-03 22:47:23,970 INFO System Starting -> creating server instance and initializing
+MainThread 2019-05-03 22:47:23,972 INFO System Starting -> preparing starting 
+MainThread 2019-05-03 22:47:23,972 INFO Installing Services Now
+MainThread 2019-05-03 22:47:24,157 INFO [1minstall service ==> access.accessservice.AccessService(100)[0m
+MainThread 2019-05-03 22:47:24,302 INFO [1minstall service ==> main.mainservice.MainService(10)[0m
+MainThread 2019-05-03 22:47:24,305 INFO [1minstall service ==> goldflower.roomservice.RoomService(200)[0m
+MainThread 2019-05-03 22:47:24,415 INFO [1minstall service ==> goldflower.goldflowerservice.GoldFlowerService(210)[0m
+MainThread 2019-05-03 22:47:24,527 INFO [1minstall service ==> hall.hallservice.HallService(80)[0m
+MainThread 2019-05-03 22:47:24,547 INFO [1minstall service ==> hall.announcementservice.AnnouncementService(81)[0m
+MainThread 2019-05-03 22:47:24,554 INFO [1minstall service ==> hall.rankservice.RankService(82)[0m
+MainThread 2019-05-03 22:47:24,564 INFO [1minstall service ==> hall.chargeservice.ChargeService(83)[0m
+MainThread 2019-05-03 22:47:24,564 INFO Setup network configuration....
+MainThread 2019-05-03 22:47:24,564 INFO [31mSystem Started[0m
+DummyThread-1 2019-05-03 22:49:11,840 INFO a client connecting now .....
+DummyThread-1 2019-05-03 22:49:11,841 INFO except******************************>
+DummyThread-1 2019-05-03 22:49:11,842 INFO finally******************************>
+DummyThread-2 2019-05-03 22:49:11,845 INFO ----> User Quit Now: -1
+MainThread 2019-05-03 22:50:24,643 INFO System Starting -> loading configuration system.ini
+MainThread 2019-05-03 22:50:24,645 INFO System Starting -> creating server instance and initializing
+MainThread 2019-05-03 22:50:24,646 INFO System Starting -> preparing starting 
+MainThread 2019-05-03 22:50:24,646 INFO Installing Services Now
+MainThread 2019-05-03 22:50:24,821 INFO [1minstall service ==> access.accessservice.AccessService(100)[0m
+MainThread 2019-05-03 22:50:24,947 INFO [1minstall service ==> main.mainservice.MainService(10)[0m
+MainThread 2019-05-03 22:50:24,948 INFO [1minstall service ==> goldflower.roomservice.RoomService(200)[0m
+MainThread 2019-05-03 22:50:25,025 INFO [1minstall service ==> goldflower.goldflowerservice.GoldFlowerService(210)[0m
+MainThread 2019-05-03 22:50:25,134 INFO [1minstall service ==> hall.hallservice.HallService(80)[0m
+MainThread 2019-05-03 22:50:25,153 INFO [1minstall service ==> hall.announcementservice.AnnouncementService(81)[0m
+MainThread 2019-05-03 22:50:25,160 INFO [1minstall service ==> hall.rankservice.RankService(82)[0m
+MainThread 2019-05-03 22:50:25,168 INFO [1minstall service ==> hall.chargeservice.ChargeService(83)[0m
+MainThread 2019-05-03 22:50:25,168 INFO Setup network configuration....
+MainThread 2019-05-03 22:50:25,168 INFO [31mSystem Started[0m
+DummyThread-1 2019-05-03 22:50:31,143 INFO a client connecting now .....
+DummyThread-1 2019-05-03 22:50:31,144 INFO except******************************>
+DummyThread-1 2019-05-03 22:50:31,145 INFO finally******************************>
+DummyThread-2 2019-05-03 22:50:31,147 INFO ----> User Quit Now: -1
+MainThread 2019-05-03 22:51:07,535 INFO System Starting -> loading configuration system.ini
+MainThread 2019-05-03 22:51:07,537 INFO System Starting -> creating server instance and initializing
+MainThread 2019-05-03 22:51:07,538 INFO System Starting -> preparing starting 
+MainThread 2019-05-03 22:51:07,538 INFO Installing Services Now
+MainThread 2019-05-03 22:51:07,738 INFO [1minstall service ==> access.accessservice.AccessService(100)[0m
+MainThread 2019-05-03 22:51:07,866 INFO [1minstall service ==> main.mainservice.MainService(10)[0m
+MainThread 2019-05-03 22:51:07,868 INFO [1minstall service ==> goldflower.roomservice.RoomService(200)[0m
+MainThread 2019-05-03 22:51:07,953 INFO [1minstall service ==> goldflower.goldflowerservice.GoldFlowerService(210)[0m
+MainThread 2019-05-03 22:51:08,064 INFO [1minstall service ==> hall.hallservice.HallService(80)[0m
+MainThread 2019-05-03 22:51:08,084 INFO [1minstall service ==> hall.announcementservice.AnnouncementService(81)[0m
+MainThread 2019-05-03 22:51:08,094 INFO [1minstall service ==> hall.rankservice.RankService(82)[0m
+MainThread 2019-05-03 22:51:08,102 INFO [1minstall service ==> hall.chargeservice.ChargeService(83)[0m
+MainThread 2019-05-03 22:51:08,102 INFO Setup network configuration....
+MainThread 2019-05-03 22:51:08,103 INFO [31mSystem Started[0m
+DummyThread-1 2019-05-03 22:51:12,272 INFO a client connecting now .....
+DummyThread-1 2019-05-03 22:51:12,273 INFO Error: message length = 4, its length is less than SIZEOF_HEADER
+DummyThread-1 2019-05-03 22:51:12,273 INFO finally******************************>
+DummyThread-2 2019-05-03 22:51:12,275 INFO ----> User Quit Now: -1
+MainThread 2019-05-03 22:52:21,527 INFO System Starting -> loading configuration system.ini
+MainThread 2019-05-03 22:52:21,529 INFO System Starting -> creating server instance and initializing
+MainThread 2019-05-03 22:52:21,530 INFO System Starting -> preparing starting 
+MainThread 2019-05-03 22:52:21,530 INFO Installing Services Now
+MainThread 2019-05-03 22:52:21,721 INFO [1minstall service ==> access.accessservice.AccessService(100)[0m
+MainThread 2019-05-03 22:52:21,846 INFO [1minstall service ==> main.mainservice.MainService(10)[0m
+MainThread 2019-05-03 22:52:21,848 INFO [1minstall service ==> goldflower.roomservice.RoomService(200)[0m
+MainThread 2019-05-03 22:52:21,934 INFO [1minstall service ==> goldflower.goldflowerservice.GoldFlowerService(210)[0m
+MainThread 2019-05-03 22:52:22,036 INFO [1minstall service ==> hall.hallservice.HallService(80)[0m
+MainThread 2019-05-03 22:52:22,056 INFO [1minstall service ==> hall.announcementservice.AnnouncementService(81)[0m
+MainThread 2019-05-03 22:52:22,064 INFO [1minstall service ==> hall.rankservice.RankService(82)[0m
+MainThread 2019-05-03 22:52:22,072 INFO [1minstall service ==> hall.chargeservice.ChargeService(83)[0m
+MainThread 2019-05-03 22:52:22,072 INFO Setup network configuration....
+MainThread 2019-05-03 22:52:22,073 INFO [31mSystem Started[0m
+DummyThread-1 2019-05-03 22:52:24,207 INFO a client connecting now .....
+DummyThread-1 2019-05-03 22:52:24,222 INFO Error: message length = 4, its length is less than SIZEOF_HEADER
+DummyThread-1 2019-05-03 22:52:24,223 INFO finally******************************>
+DummyThread-2 2019-05-03 22:52:24,224 INFO ----> User Quit Now: -1
+MainThread 2019-05-03 22:56:03,418 INFO System Starting -> loading configuration system.ini
+MainThread 2019-05-03 22:56:03,421 INFO System Starting -> creating server instance and initializing
+MainThread 2019-05-03 22:56:03,421 INFO System Starting -> preparing starting 
+MainThread 2019-05-03 22:56:03,421 INFO Installing Services Now
+MainThread 2019-05-03 22:56:03,641 INFO [1minstall service ==> access.accessservice.AccessService(100)[0m
+MainThread 2019-05-03 22:56:03,755 INFO [1minstall service ==> main.mainservice.MainService(10)[0m
+MainThread 2019-05-03 22:56:03,757 INFO [1minstall service ==> goldflower.roomservice.RoomService(200)[0m
+MainThread 2019-05-03 22:56:03,833 INFO [1minstall service ==> goldflower.goldflowerservice.GoldFlowerService(210)[0m
+MainThread 2019-05-03 22:56:03,948 INFO [1minstall service ==> hall.hallservice.HallService(80)[0m
+MainThread 2019-05-03 22:56:03,967 INFO [1minstall service ==> hall.announcementservice.AnnouncementService(81)[0m
+MainThread 2019-05-03 22:56:03,974 INFO [1minstall service ==> hall.rankservice.RankService(82)[0m
+MainThread 2019-05-03 22:56:03,984 INFO [1minstall service ==> hall.chargeservice.ChargeService(83)[0m
+MainThread 2019-05-03 22:56:03,985 INFO Setup network configuration....
+MainThread 2019-05-03 22:56:03,985 INFO [31mSystem Started[0m
+DummyThread-1 2019-05-03 22:56:05,542 INFO a client connecting now .....
+DummyThread-1 2019-05-03 22:56:05,542 INFO ----->
+DummyThread-1 2019-05-03 22:56:05,543 INFO bytearray(b'\x00\x00\x00\x04\x00\x00\x00(\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\x10\xe7\x82\x03')
+DummyThread-1 2019-05-03 22:56:05,543 INFO 28
+DummyThread-1 2019-05-03 22:56:05,543 INFO 24
+DummyThread-1 2019-05-03 22:56:05,544 INFO Error: message length = 4, its length is less than SIZEOF_HEADER
+DummyThread-1 2019-05-03 22:56:05,545 INFO finally******************************>
+DummyThread-2 2019-05-03 22:56:05,547 INFO ----> User Quit Now: -1
+MainThread 2019-05-03 22:58:05,459 INFO System Starting -> loading configuration system.ini
+MainThread 2019-05-03 22:58:05,461 INFO System Starting -> creating server instance and initializing
+MainThread 2019-05-03 22:58:05,462 INFO System Starting -> preparing starting 
+MainThread 2019-05-03 22:58:05,462 INFO Installing Services Now
+MainThread 2019-05-03 22:58:06,044 INFO [1minstall service ==> access.accessservice.AccessService(100)[0m
+MainThread 2019-05-03 22:58:06,369 INFO [1minstall service ==> main.mainservice.MainService(10)[0m
+MainThread 2019-05-03 22:58:06,372 INFO [1minstall service ==> goldflower.roomservice.RoomService(200)[0m
+MainThread 2019-05-03 22:58:06,715 INFO [1minstall service ==> goldflower.goldflowerservice.GoldFlowerService(210)[0m
+MainThread 2019-05-03 22:58:06,824 INFO [1minstall service ==> hall.hallservice.HallService(80)[0m
+MainThread 2019-05-03 22:58:06,842 INFO [1minstall service ==> hall.announcementservice.AnnouncementService(81)[0m
+MainThread 2019-05-03 22:58:06,849 INFO [1minstall service ==> hall.rankservice.RankService(82)[0m
+MainThread 2019-05-03 22:58:06,858 INFO [1minstall service ==> hall.chargeservice.ChargeService(83)[0m
+MainThread 2019-05-03 22:58:06,859 INFO Setup network configuration....
+MainThread 2019-05-03 22:58:06,859 INFO [31mSystem Started[0m
+DummyThread-1 2019-05-03 22:58:08,499 INFO a client connecting now .....
+DummyThread-1 2019-05-03 22:58:08,502 INFO ========<
+DummyThread-1 2019-05-03 22:58:08,503 INFO <message.base.Header object at 0x103a6fb70>
+DummyThread-1 2019-05-03 22:58:08,503 INFO ----->
+DummyThread-1 2019-05-03 22:58:08,503 INFO bytearray(b'\x00\x00\x00\x04\x00\x00\x00(\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\x10\xe7\x82\x03')
+DummyThread-1 2019-05-03 22:58:08,503 INFO 28
+DummyThread-1 2019-05-03 22:58:08,504 INFO 24
+DummyThread-1 2019-05-03 22:58:08,504 INFO Error: message length = 4, its length is less than SIZEOF_HEADER
+DummyThread-1 2019-05-03 22:58:08,505 INFO finally******************************>
+DummyThread-2 2019-05-03 22:58:08,506 INFO ----> User Quit Now: -1
+MainThread 2019-05-03 22:59:37,939 INFO System Starting -> loading configuration system.ini
+MainThread 2019-05-03 22:59:37,941 INFO System Starting -> creating server instance and initializing
+MainThread 2019-05-03 22:59:37,942 INFO System Starting -> preparing starting 
+MainThread 2019-05-03 22:59:37,942 INFO Installing Services Now
+MainThread 2019-05-03 22:59:38,123 INFO [1minstall service ==> access.accessservice.AccessService(100)[0m
+MainThread 2019-05-03 22:59:38,254 INFO [1minstall service ==> main.mainservice.MainService(10)[0m
+MainThread 2019-05-03 22:59:38,257 INFO [1minstall service ==> goldflower.roomservice.RoomService(200)[0m
+MainThread 2019-05-03 22:59:38,340 INFO [1minstall service ==> goldflower.goldflowerservice.GoldFlowerService(210)[0m
+MainThread 2019-05-03 22:59:38,452 INFO [1minstall service ==> hall.hallservice.HallService(80)[0m
+MainThread 2019-05-03 22:59:38,472 INFO [1minstall service ==> hall.announcementservice.AnnouncementService(81)[0m
+MainThread 2019-05-03 22:59:38,479 INFO [1minstall service ==> hall.rankservice.RankService(82)[0m
+MainThread 2019-05-03 22:59:38,486 INFO [1minstall service ==> hall.chargeservice.ChargeService(83)[0m
+MainThread 2019-05-03 22:59:38,487 INFO Setup network configuration....
+MainThread 2019-05-03 22:59:38,487 INFO [31mSystem Started[0m
+DummyThread-1 2019-05-03 22:59:42,034 INFO a client connecting now .....
+DummyThread-1 2019-05-03 22:59:42,035 INFO ========<
+DummyThread-1 2019-05-03 22:59:42,035 INFO <Header length=%d,command=%d,transaction=%d,user=%d,result=%d,route=%d />
+DummyThread-1 2019-05-03 22:59:42,035 INFO ----->
+DummyThread-1 2019-05-03 22:59:42,035 INFO bytearray(b'\x00\x00\x00\x04\x00\x00\x00(\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\x10\xe7\x82\x03')
+DummyThread-1 2019-05-03 22:59:42,035 INFO 28
+DummyThread-1 2019-05-03 22:59:42,035 INFO 24
+DummyThread-1 2019-05-03 22:59:42,036 INFO Error: message length = 4, its length is less than SIZEOF_HEADER
+DummyThread-1 2019-05-03 22:59:42,036 INFO finally******************************>
+DummyThread-2 2019-05-03 22:59:42,038 INFO ----> User Quit Now: -1
+MainThread 2019-05-03 23:00:25,981 INFO System Starting -> loading configuration system.ini
+MainThread 2019-05-03 23:00:25,983 INFO System Starting -> creating server instance and initializing
+MainThread 2019-05-03 23:00:25,984 INFO System Starting -> preparing starting 
+MainThread 2019-05-03 23:00:25,984 INFO Installing Services Now
+MainThread 2019-05-03 23:00:26,522 INFO [1minstall service ==> access.accessservice.AccessService(100)[0m
+MainThread 2019-05-03 23:00:26,714 INFO [1minstall service ==> main.mainservice.MainService(10)[0m
+MainThread 2019-05-03 23:00:26,716 INFO [1minstall service ==> goldflower.roomservice.RoomService(200)[0m
+MainThread 2019-05-03 23:00:27,035 INFO [1minstall service ==> goldflower.goldflowerservice.GoldFlowerService(210)[0m
+MainThread 2019-05-03 23:00:27,168 INFO [1minstall service ==> hall.hallservice.HallService(80)[0m
+MainThread 2019-05-03 23:00:27,195 INFO [1minstall service ==> hall.announcementservice.AnnouncementService(81)[0m
+MainThread 2019-05-03 23:00:27,203 INFO [1minstall service ==> hall.rankservice.RankService(82)[0m
+MainThread 2019-05-03 23:00:27,212 INFO [1minstall service ==> hall.chargeservice.ChargeService(83)[0m
+MainThread 2019-05-03 23:00:27,212 INFO Setup network configuration....
+MainThread 2019-05-03 23:00:27,212 INFO [31mSystem Started[0m
+DummyThread-1 2019-05-03 23:00:28,455 INFO a client connecting now .....
+DummyThread-1 2019-05-03 23:00:28,455 INFO ========<
+DummyThread-1 2019-05-03 23:00:28,456 INFO <Header length=4,command=40,transaction=-1,user=-1,result=-1,route=-1 />
+DummyThread-1 2019-05-03 23:00:28,456 INFO ----->
+DummyThread-1 2019-05-03 23:00:28,456 INFO bytearray(b'\x00\x00\x00\x04\x00\x00\x00(\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\x10\xe7\x82\x03')
+DummyThread-1 2019-05-03 23:00:28,456 INFO 28
+DummyThread-1 2019-05-03 23:00:28,457 INFO 24
+DummyThread-1 2019-05-03 23:00:28,457 INFO Error: message length = 4, its length is less than SIZEOF_HEADER
+DummyThread-1 2019-05-03 23:00:28,457 INFO finally******************************>
+DummyThread-2 2019-05-03 23:00:28,458 INFO ----> User Quit Now: -1
+DummyThread-3 2019-05-03 23:01:31,379 INFO a client connecting now .....
+DummyThread-3 2019-05-03 23:01:31,380 INFO ========<
+DummyThread-3 2019-05-03 23:01:31,380 INFO <Header length=24,command=40,transaction=-1,user=-1,result=-1,route=-1 />
+DummyThread-3 2019-05-03 23:01:31,380 INFO ----->
+DummyThread-3 2019-05-03 23:01:31,380 INFO bytearray(b'\x00\x00\x00\x18\x00\x00\x00(\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\x10\xe7\x82\x03')
+DummyThread-3 2019-05-03 23:01:31,380 INFO 28
+DummyThread-3 2019-05-03 23:01:31,381 INFO 24
+DummyThread-3 2019-05-03 23:01:31,381 INFO receive a message ==><access.accesswsserver.AccessRawMessage object at 0x10fd4f828>
+DummyThread-4 2019-05-03 23:01:31,381 INFO --->
+DummyThread-4 2019-05-03 23:01:31,381 INFO <access.accesswsserver.AccessRawMessage object at 0x10fd4f828>
+DummyThread-4 2019-05-03 23:01:31,381 INFO ==> receive message : cmd=40 | user=-1 | route=-1 
+DummyThread-4 2019-05-03 23:01:31,382 INFO message body:
+
+DummyThread-3 2019-05-03 23:01:34,545 INFO disconnected now ---> no data
+DummyThread-3 2019-05-03 23:01:34,546 INFO finally******************************>
+DummyThread-5 2019-05-03 23:01:34,547 INFO ----> User Quit Now: -1
+DummyThread-6 2019-05-03 23:01:34,887 INFO a client connecting now .....
+DummyThread-6 2019-05-03 23:01:34,890 INFO ========<
+DummyThread-6 2019-05-03 23:01:34,890 INFO <Header length=24,command=40,transaction=-1,user=-1,result=-1,route=-1 />
+DummyThread-6 2019-05-03 23:01:34,891 INFO ----->
+DummyThread-6 2019-05-03 23:01:34,891 INFO bytearray(b'\x00\x00\x00\x18\x00\x00\x00(\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\x10\xe7\x82\x03')
+DummyThread-6 2019-05-03 23:01:34,891 INFO 28
+DummyThread-6 2019-05-03 23:01:34,892 INFO 24
+DummyThread-6 2019-05-03 23:01:34,892 INFO receive a message ==><access.accesswsserver.AccessRawMessage object at 0x10fd4fac8>
+DummyThread-7 2019-05-03 23:01:34,893 INFO --->
+DummyThread-7 2019-05-03 23:01:34,893 INFO <access.accesswsserver.AccessRawMessage object at 0x10fd4fac8>
+DummyThread-7 2019-05-03 23:01:34,893 INFO ==> receive message : cmd=40 | user=-1 | route=-1 
+DummyThread-7 2019-05-03 23:01:34,894 INFO message body:
+
+MainThread 2019-05-03 23:01:49,310 INFO System Starting -> loading configuration system.ini
+MainThread 2019-05-03 23:01:49,312 INFO System Starting -> creating server instance and initializing
+MainThread 2019-05-03 23:01:49,313 INFO System Starting -> preparing starting 
+MainThread 2019-05-03 23:01:49,313 INFO Installing Services Now
+MainThread 2019-05-03 23:01:49,851 INFO [1minstall service ==> access.accessservice.AccessService(100)[0m
+MainThread 2019-05-03 23:01:50,020 INFO [1minstall service ==> main.mainservice.MainService(10)[0m
+MainThread 2019-05-03 23:01:50,023 INFO [1minstall service ==> goldflower.roomservice.RoomService(200)[0m
+MainThread 2019-05-03 23:01:50,508 INFO [1minstall service ==> goldflower.goldflowerservice.GoldFlowerService(210)[0m
+MainThread 2019-05-03 23:01:50,619 INFO [1minstall service ==> hall.hallservice.HallService(80)[0m
+MainThread 2019-05-03 23:01:50,639 INFO [1minstall service ==> hall.announcementservice.AnnouncementService(81)[0m
+MainThread 2019-05-03 23:01:50,645 INFO [1minstall service ==> hall.rankservice.RankService(82)[0m
+MainThread 2019-05-03 23:01:50,654 INFO [1minstall service ==> hall.chargeservice.ChargeService(83)[0m
+MainThread 2019-05-03 23:01:50,654 INFO Setup network configuration....
+MainThread 2019-05-03 23:01:50,655 INFO [31mSystem Started[0m
+DummyThread-1 2019-05-03 23:01:51,428 INFO a client connecting now .....
+DummyThread-1 2019-05-03 23:01:51,429 INFO ========<
+DummyThread-1 2019-05-03 23:01:51,429 INFO <Header length=24,command=40,transaction=-1,user=-1,result=-1,route=-1 />
+DummyThread-1 2019-05-03 23:01:51,429 INFO ----->
+DummyThread-1 2019-05-03 23:01:51,429 INFO bytearray(b'\x00\x00\x00\x18\x00\x00\x00(\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\x10\xe7\x82\x03')
+DummyThread-1 2019-05-03 23:01:51,430 INFO 28
+DummyThread-1 2019-05-03 23:01:51,430 INFO 24
+DummyThread-1 2019-05-03 23:01:51,430 INFO receive a message ==><access.accesswsserver.AccessRawMessage object at 0x10681fcf8>
+DummyThread-2 2019-05-03 23:01:51,430 INFO --->
+DummyThread-2 2019-05-03 23:01:51,430 INFO <access.accesswsserver.AccessRawMessage object at 0x10681fcf8>
+DummyThread-2 2019-05-03 23:01:51,430 INFO ==> receive message : cmd=40 | user=-1 | route=-1 
+DummyThread-2 2019-05-03 23:01:51,430 INFO message body:
+
+MainThread 2019-05-03 23:02:42,343 INFO System Starting -> loading configuration system.ini
+MainThread 2019-05-03 23:02:42,345 INFO System Starting -> creating server instance and initializing
+MainThread 2019-05-03 23:02:42,345 INFO System Starting -> preparing starting 
+MainThread 2019-05-03 23:02:42,345 INFO Installing Services Now
+MainThread 2019-05-03 23:02:42,705 INFO [1minstall service ==> access.accessservice.AccessService(100)[0m
+MainThread 2019-05-03 23:02:43,167 INFO [1minstall service ==> main.mainservice.MainService(10)[0m
+MainThread 2019-05-03 23:02:43,168 INFO [1minstall service ==> goldflower.roomservice.RoomService(200)[0m
+MainThread 2019-05-03 23:02:43,358 INFO [1minstall service ==> goldflower.goldflowerservice.GoldFlowerService(210)[0m
+MainThread 2019-05-03 23:02:43,438 INFO [1minstall service ==> hall.hallservice.HallService(80)[0m
+MainThread 2019-05-03 23:02:43,458 INFO [1minstall service ==> hall.announcementservice.AnnouncementService(81)[0m
+MainThread 2019-05-03 23:02:43,463 INFO [1minstall service ==> hall.rankservice.RankService(82)[0m
+MainThread 2019-05-03 23:02:43,470 INFO [1minstall service ==> hall.chargeservice.ChargeService(83)[0m
+MainThread 2019-05-03 23:02:43,470 INFO Setup network configuration....
+MainThread 2019-05-03 23:02:43,470 INFO [31mSystem Started[0m
+DummyThread-1 2019-05-03 23:02:45,382 INFO a client connecting now .....
+DummyThread-1 2019-05-03 23:02:45,383 INFO ========<
+DummyThread-1 2019-05-03 23:02:45,383 INFO <Header length=24,command=40,transaction=-1,user=-1,result=-1,route=-1 />
+DummyThread-1 2019-05-03 23:02:45,383 INFO ----->
+DummyThread-1 2019-05-03 23:02:45,383 INFO bytearray(b'\x00\x00\x00\x18\x00\x00\x00(\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\x10\xe7\x82\x03')
+DummyThread-1 2019-05-03 23:02:45,384 INFO 28
+DummyThread-1 2019-05-03 23:02:45,384 INFO 24
+DummyThread-1 2019-05-03 23:02:45,384 INFO receive a message ==><access.accesswsserver.AccessRawMessage object at 0x109632d30>
+DummyThread-2 2019-05-03 23:02:45,384 INFO --->
+DummyThread-2 2019-05-03 23:02:45,384 INFO <access.accesswsserver.AccessRawMessage object at 0x109632d30>
+DummyThread-2 2019-05-03 23:02:45,384 INFO ==> receive message : cmd=40 | user=-1 | route=-1 
+DummyThread-2 2019-05-03 23:02:45,384 INFO message body:
+
+MainThread 2019-05-03 23:05:33,950 INFO System Starting -> loading configuration system.ini
+MainThread 2019-05-03 23:05:33,952 INFO System Starting -> creating server instance and initializing
+MainThread 2019-05-03 23:05:33,953 INFO System Starting -> preparing starting 
+MainThread 2019-05-03 23:05:33,953 INFO Installing Services Now
+MainThread 2019-05-03 23:05:34,138 INFO [1minstall service ==> access.accessservice.AccessService(100)[0m
+MainThread 2019-05-03 23:05:34,260 INFO [1minstall service ==> main.mainservice.MainService(10)[0m
+MainThread 2019-05-03 23:05:34,262 INFO [1minstall service ==> goldflower.roomservice.RoomService(200)[0m
+MainThread 2019-05-03 23:05:34,341 INFO [1minstall service ==> goldflower.goldflowerservice.GoldFlowerService(210)[0m
+MainThread 2019-05-03 23:05:34,450 INFO [1minstall service ==> hall.hallservice.HallService(80)[0m
+MainThread 2019-05-03 23:05:34,470 INFO [1minstall service ==> hall.announcementservice.AnnouncementService(81)[0m
+MainThread 2019-05-03 23:05:34,477 INFO [1minstall service ==> hall.rankservice.RankService(82)[0m
+MainThread 2019-05-03 23:05:34,485 INFO [1minstall service ==> hall.chargeservice.ChargeService(83)[0m
+MainThread 2019-05-03 23:05:34,485 INFO Setup network configuration....
+MainThread 2019-05-03 23:05:34,485 INFO [31mSystem Started[0m
+DummyThread-1 2019-05-03 23:05:41,102 INFO a client connecting now .....
+DummyThread-1 2019-05-03 23:05:41,103 INFO ========<
+DummyThread-1 2019-05-03 23:05:41,103 INFO <Header length=28,command=40,transaction=49511,user=-1,result=-1,route=-1 />
+DummyThread-1 2019-05-03 23:05:41,104 INFO ----->
+DummyThread-1 2019-05-03 23:05:41,104 INFO bytearray(b'\x00\x00\x00\x1c\x00\x00\x00(\x00\x00\xc1g\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\x10\xe7\x82\x03')
+DummyThread-1 2019-05-03 23:05:41,104 INFO 28
+DummyThread-1 2019-05-03 23:05:41,104 INFO 24
+DummyThread-1 2019-05-03 23:05:41,104 INFO receive a message ==><access.accesswsserver.AccessRawMessage object at 0x1085de5c0>
+DummyThread-2 2019-05-03 23:05:41,104 INFO --->
+DummyThread-2 2019-05-03 23:05:41,105 INFO <access.accesswsserver.AccessRawMessage object at 0x1085de5c0>
+DummyThread-2 2019-05-03 23:05:41,107 INFO ==> receive message : cmd=40 | user=-1 | route=-1 
+DummyThread-2 2019-05-03 23:05:41,107 INFO message body:
+session: 49511
+
+DummyThread-1 2019-05-03 23:06:15,187 INFO disconnected now ---> no data
+DummyThread-1 2019-05-03 23:06:15,187 INFO finally******************************>
+DummyThread-3 2019-05-03 23:06:15,192 INFO ----> User Quit Now: -1
+DummyThread-4 2019-05-03 23:06:15,775 INFO a client connecting now .....
+DummyThread-4 2019-05-03 23:06:15,775 INFO ========<
+DummyThread-4 2019-05-03 23:06:15,775 INFO <Header length=28,command=40,transaction=-1,user=49511,result=-1,route=-1 />
+DummyThread-4 2019-05-03 23:06:15,775 INFO ----->
+DummyThread-4 2019-05-03 23:06:15,776 INFO bytearray(b'\x00\x00\x00\x1c\x00\x00\x00(\xff\xff\xff\xff\x00\x00\xc1g\xff\xff\xff\xff\xff\xff\xff\xff\x10\xe7\x82\x03')
+DummyThread-4 2019-05-03 23:06:15,776 INFO 28
+DummyThread-4 2019-05-03 23:06:15,776 INFO 24
+DummyThread-4 2019-05-03 23:06:15,776 INFO receive a message ==><access.accesswsserver.AccessRawMessage object at 0x1085de5c0>
+DummyThread-5 2019-05-03 23:06:15,776 INFO --->
+DummyThread-5 2019-05-03 23:06:15,776 INFO <access.accesswsserver.AccessRawMessage object at 0x1085de5c0>
+DummyThread-5 2019-05-03 23:06:15,776 INFO ==> receive message : cmd=40 | user=49511 | route=-1 
+DummyThread-5 2019-05-03 23:06:15,776 INFO message body:
+session: 49511
+
+DummyThread-5 2019-05-03 23:06:15,800 INFO login is failure ,so close it !
+DummyThread-6 2019-05-03 23:06:15,801 INFO <== send message back: cmd=41 | user=-1 | result=-1 
+DummyThread-6 2019-05-03 23:06:15,801 INFO message body sent :
+
+DummyThread-7 2019-05-03 23:06:15,802 INFO ----> User Quit Now: -1
+MainThread 2019-05-03 23:06:57,091 INFO System Starting -> loading configuration system.ini
+MainThread 2019-05-03 23:06:57,093 INFO System Starting -> creating server instance and initializing
+MainThread 2019-05-03 23:06:57,094 INFO System Starting -> preparing starting 
+MainThread 2019-05-03 23:06:57,094 INFO Installing Services Now
+MainThread 2019-05-03 23:06:57,424 INFO [1minstall service ==> access.accessservice.AccessService(100)[0m
+MainThread 2019-05-03 23:06:57,590 INFO [1minstall service ==> main.mainservice.MainService(10)[0m
+MainThread 2019-05-03 23:06:57,592 INFO [1minstall service ==> goldflower.roomservice.RoomService(200)[0m
+MainThread 2019-05-03 23:06:57,910 INFO [1minstall service ==> goldflower.goldflowerservice.GoldFlowerService(210)[0m
+MainThread 2019-05-03 23:06:58,015 INFO [1minstall service ==> hall.hallservice.HallService(80)[0m
+MainThread 2019-05-03 23:06:58,037 INFO [1minstall service ==> hall.announcementservice.AnnouncementService(81)[0m
+MainThread 2019-05-03 23:06:58,044 INFO [1minstall service ==> hall.rankservice.RankService(82)[0m
+MainThread 2019-05-03 23:06:58,053 INFO [1minstall service ==> hall.chargeservice.ChargeService(83)[0m
+MainThread 2019-05-03 23:06:58,053 INFO Setup network configuration....
+MainThread 2019-05-03 23:06:58,053 INFO [31mSystem Started[0m
+DummyThread-1 2019-05-03 23:07:02,058 INFO a client connecting now .....
+DummyThread-1 2019-05-03 23:07:02,059 INFO ========<
+DummyThread-1 2019-05-03 23:07:02,059 INFO <Header length=28,command=40,transaction=-1,user=49511,result=-1,route=-1 />
+DummyThread-1 2019-05-03 23:07:02,059 INFO ----->
+DummyThread-1 2019-05-03 23:07:02,060 INFO bytearray(b'\x00\x00\x00\x1c\x00\x00\x00(\xff\xff\xff\xff\x00\x00\xc1g\xff\xff\xff\xff\xff\xff\xff\xff\x10\xe7\x82\x03')
+DummyThread-1 2019-05-03 23:07:02,060 INFO 28
+DummyThread-1 2019-05-03 23:07:02,060 INFO 24
+DummyThread-1 2019-05-03 23:07:02,060 INFO receive a message ==><access.accesswsserver.AccessRawMessage object at 0x1048f6550>
+DummyThread-2 2019-05-03 23:07:02,060 INFO --->
+DummyThread-2 2019-05-03 23:07:02,061 INFO <access.accesswsserver.AccessRawMessage object at 0x1048f6550>
+DummyThread-2 2019-05-03 23:07:02,061 INFO ==> receive message : cmd=40 | user=49511 | route=-1 
+DummyThread-2 2019-05-03 23:07:02,062 INFO message body:
+session: 49511
+
+DummyThread-2 2019-05-03 23:07:02,132 INFO login is failure ,so close it !
+DummyThread-3 2019-05-03 23:07:02,133 INFO <== send message back: cmd=41 | user=-1 | result=-1 
+DummyThread-3 2019-05-03 23:07:02,133 INFO message body sent :
+
+DummyThread-4 2019-05-03 23:07:02,137 INFO ----> User Quit Now: -1
+MainThread 2019-05-03 23:08:00,745 INFO System Starting -> loading configuration system.ini
+MainThread 2019-05-03 23:08:00,747 INFO System Starting -> creating server instance and initializing
+MainThread 2019-05-03 23:08:00,748 INFO System Starting -> preparing starting 
+MainThread 2019-05-03 23:08:00,748 INFO Installing Services Now
+MainThread 2019-05-03 23:08:00,939 INFO [1minstall service ==> access.accessservice.AccessService(100)[0m
+MainThread 2019-05-03 23:08:01,071 INFO [1minstall service ==> main.mainservice.MainService(10)[0m
+MainThread 2019-05-03 23:08:01,073 INFO [1minstall service ==> goldflower.roomservice.RoomService(200)[0m
+MainThread 2019-05-03 23:08:01,172 INFO [1minstall service ==> goldflower.goldflowerservice.GoldFlowerService(210)[0m
+MainThread 2019-05-03 23:08:01,283 INFO [1minstall service ==> hall.hallservice.HallService(80)[0m
+MainThread 2019-05-03 23:08:01,303 INFO [1minstall service ==> hall.announcementservice.AnnouncementService(81)[0m
+MainThread 2019-05-03 23:08:01,309 INFO [1minstall service ==> hall.rankservice.RankService(82)[0m
+MainThread 2019-05-03 23:08:01,318 INFO [1minstall service ==> hall.chargeservice.ChargeService(83)[0m
+MainThread 2019-05-03 23:08:01,318 INFO Setup network configuration....
+MainThread 2019-05-03 23:08:01,318 INFO [31mSystem Started[0m
+DummyThread-1 2019-05-03 23:08:05,842 INFO a client connecting now .....
+DummyThread-1 2019-05-03 23:08:05,858 INFO ========<
+DummyThread-1 2019-05-03 23:08:05,858 INFO <Header length=29,command=40,transaction=-1,user=49511,result=-1,route=-1 />
+DummyThread-1 2019-05-03 23:08:05,858 INFO ----->
+DummyThread-1 2019-05-03 23:08:05,859 INFO bytearray(b'\x00\x00\x00\x1d\x00\x00\x00(\xff\xff\xff\xff\x00\x00\xc1g\xff\xff\xff\xff\xff\xff\xff\xff\x10\xd9\xb0\xe4\x07')
+DummyThread-1 2019-05-03 23:08:05,859 INFO 29
+DummyThread-1 2019-05-03 23:08:05,859 INFO 24
+DummyThread-1 2019-05-03 23:08:05,859 INFO receive a message ==><access.accesswsserver.AccessRawMessage object at 0x1048094e0>
+DummyThread-2 2019-05-03 23:08:05,859 INFO --->
+DummyThread-2 2019-05-03 23:08:05,859 INFO <access.accesswsserver.AccessRawMessage object at 0x1048094e0>
+DummyThread-2 2019-05-03 23:08:05,859 INFO ==> receive message : cmd=40 | user=49511 | route=-1 
+DummyThread-2 2019-05-03 23:08:05,860 INFO message body:
+session: 16324697
+
+DummyThread-3 2019-05-03 23:08:06,183 INFO <== send message back: cmd=41 | user=49511 | result=0 
+DummyThread-3 2019-05-03 23:08:06,184 INFO message body sent :
+server_time: 1556896086
+
+DummyThread-4 2019-05-03 23:08:06,488 INFO ====> User Connect Now: 49511
+DummyThread-5 2019-05-03 23:08:06,593 INFO No service handler for 120

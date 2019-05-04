@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>avatar</title>
+	<style type="text/css">
+		body{margin: 0 auto;width: 960px;}
+	h2{text-align: center;}
+	table.gridtable {
+
+	font-family: verdana,arial,sans-serif;
+	font-size:11px;
+	color:#333333;
+	border-width: 1px;
+	border-color: #666666;
+	border-collapse: collapse;
+}
+table.gridtable th {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	color: #fff;
+	border-color: #ffffff;
+	background-color:  rgb(81, 130, 187);
+}
+table.gridtable td {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #fff;
+}
+		tr:hover{background:#7bbbe2;}
+	</style>
+</head>
+<body>
+<h2>avatar verify</h2>
+	<table width="100%" class="gridtable">
+		<thead>
+		<tr>
+			<th>UID</th><th>头像</th><th>创建时间</th><th>操作</th>
+		</tr></thead>
+	{% for x in lists %}
+	<tr>
+		<td>{{ x.uid }}</td><td><img src="{{ x.avatar }}" alt="{{ x.uid }}"/></td><td>{{ x.add_time }}</td>
+		<td>
+
+			<form method="post" action="/avatar_verify">
+		<button type="submit" name="send" value="1">通过</button>
+			&nbsp;&nbsp;&nbsp;
+			<button type="submit" name="send" value="0">拒绝</button>
+			<input type="hidden" name="uid" value="{{x.uid}}">
+			</form>
+		</td>
+	</tr>
+	{% endfor %}
+	</table>
+</body>
+</html>

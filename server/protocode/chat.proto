@@ -1,0 +1,70 @@
+syntax = "proto2";
+package cardgame;
+
+import "struct.proto";
+import "constant.proto";
+option optimize_for = LITE_RUNTIME;
+option java_package = "com.zhili.cardgame.proto";  
+option java_outer_classname = "Chat";
+
+
+message SendChatReq {
+    enum DEF {
+        ID = 1200;
+    }
+    required int32 table_id = 1;
+	required string message = 2;
+	optional ChatType chat_type = 3;
+}
+
+message SendChatResp {
+    enum DEF {
+        ID = 1201;
+    }
+    optional Result result = 1;
+	optional int32 no_talk_sec = 2;
+}
+
+message SendEmotionReq {
+	enum DEF {
+		ID = 1210;
+	}
+	required int32 table_id = 1;
+	required int32 target_player = 2;
+	required int32 emotion_id = 3;
+	required int32 count = 4;
+}
+
+message SendEmotionResp {
+	enum DEF {
+		ID = 1211;
+	}
+	optional Result result = 1;
+}
+
+
+message ChatEvent {
+	enum DEF {
+		ID = 1250;
+	}
+	required int32 sender = 1;
+	required int32 table_id = 2;
+	required string message = 3;
+	optional ChatType chat_type = 4;
+}
+
+
+message EmotionEvent {
+	enum DEF {
+		ID = 1260;
+	}
+	required int32 sender = 1;
+	required int32 table_id = 2;
+	required int32 target_player = 3;
+	required int32 emotion_id = 4;
+	required int32 count = 5;
+}
+
+
+
+

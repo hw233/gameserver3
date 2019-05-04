@@ -1,0 +1,165 @@
+syntax = "proto2";
+package cardgame;
+
+import "struct.proto";
+option optimize_for = LITE_RUNTIME;
+option java_package = "com.zhili.cardgame.proto";  
+option java_outer_classname = "Reward";
+
+message QueryRewardsReq {
+    enum DEF {
+        ID = 2000;
+    }
+}
+
+message QueryRewardsResp {
+    enum DEF {
+        ID = 2001;
+    }
+	repeated Reward rewards = 1;
+}
+
+message ReceiveRewardReq {
+    enum DEF {
+        ID = 2002;
+    }
+	required int32 reward_id = 1;
+}
+
+
+message ReceiveRewardResp {
+    enum DEF {
+        ID = 2003;
+    }
+    optional Result result = 1;
+}
+
+message QuerySigninRewardReq {
+	enum DEF {
+		ID = 2004;
+	}
+}
+
+message QuerySigninRewardResp {
+	enum DEF {
+		ID = 2005;
+	}
+	repeated SigninReward rewards = 1;
+	optional int32 signin_days = 2;
+	optional int32 month_sigin_days = 3;
+}
+
+message SigninReq {
+	enum DEF {
+		ID = 2006;
+	}
+}
+
+message SigninResp {
+	enum DEF {
+		ID = 2007;
+	}
+	optional Result result = 1;
+	optional SigninReward next_signin_reward = 2;
+}
+
+message ResetPlayRewardReq {
+	enum DEF {
+		ID = 2008;
+	}
+}
+
+message ResetPlayRewardResp {
+	enum DEF {
+		ID = 2009;
+	}
+}
+
+message ReceivePlayRewardReq {
+	enum DEF {
+		ID = 2010;
+	}
+}
+
+message ReceivePlayRewardResp {
+	enum DEF {
+		ID = 2011;
+	}
+	optional Result result = 1;
+	optional int32 next_round = 2;
+}
+
+
+message ReceiveCodeRewardReq {
+	enum DEF {
+		ID = 2012;
+	}
+	required string code = 1;
+}
+
+message ReceiveCodeRewardResp {
+	enum DEF {
+		ID = 2013;
+	}
+	
+	optional Result result = 1;
+}
+
+// 破产补助
+
+message QueryBankcruptRewardReq {
+	enum DEF {
+		ID = 2014;
+	}
+}
+
+message QueryBankcruptRewardResp {
+	enum DEF {
+		ID = 2015;
+	}
+	optional int32 total = 1;
+	optional int32 used = 2;
+	optional int32 gold = 3;
+}
+
+
+message ReceiveBankcruptRewardReq {
+	enum DEF {
+		ID = 2016;
+	}
+}
+
+message ReceiveBankcruptRewardResp {
+	enum DEF {
+		ID = 2017;
+	}
+	optional int32 gold = 1;
+}
+
+// 每轮游戏结束上报
+message RecordPlayRewardReq {
+	enum DEF {
+		ID = 2018;
+	}
+}
+
+message RecordPlayRewardResp {
+	enum DEF {
+		ID = 2019;
+	}
+	required int32 total = 1;//需要完成多少局才能领取
+	required int32 current = 2;//当前是第几轮
+}
+
+//宝箱功能
+message RewardBoxEvent {
+	enum DEF {
+		ID = 2050;
+	}
+	required int32 box_id = 1;
+	required int32 max_gold = 2;
+	required int32 min_gold = 3;
+	required int32 max_diamond = 4;
+	required int32 min_diamond = 5;
+	required int32 need_money = 6;
+}

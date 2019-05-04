@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ops</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/pure/1.0.0/pure-min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style scoped>
+        body{
+            margin:10rem auto;
+        }
+        .button-success,
+        .button-error,
+        .button-warning,
+        .button-secondary {
+            color: white;
+            border-radius: 4px;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+        }
+
+        .button-success {
+            background: rgb(28, 184, 65); /* this is a green */
+        }
+
+        .button-error {
+            background: rgb(202, 60, 60); /* this is a maroon */
+        }
+
+        .button-warning {
+            background: rgb(223, 117, 20); /* this is an orange */
+        }
+
+        .button-secondary {
+            background: rgb(66, 184, 221); /* this is a light blue */
+        }
+
+
+        .button-xlarge {
+            font-size: 125%;
+        }
+    </style>
+</head>
+<body>
+{% if 'username' in session %}
+{% for msg in get_flashed_messages() %}
+    <p class="button-success">{{ msg }}</p>
+{% endfor %}
+<form method="post" action="/ops">
+<button type="submit" name="reload" value="py_game" class="pure-button button-warning button-xlarge">重启【大厅】和【炸金花】</button>
+<br>
+<hr>
+<button type="submit" name="reload"  value="py_robot" class="pure-button button-success button-xlarge">重启【炸金花机器人】</button>
+<br>
+<hr>
+<button type="submit"  name="reload" value="py_war" class="pure-button button-secondary button-xlarge">重启【红黑】</button>
+<br>
+<hr>
+<button type="submit"  name="reload" value="all" class="pure-button button-error button-xlarge">All</button>
+<br>
+<hr>
+</form>
+{% else %}
+<form action="/ops" method="post"><lable><input type="text" name="username" value="" /></lable><input type="submit" value="登录"></form>
+{% endif %}
+</body>
+</html>

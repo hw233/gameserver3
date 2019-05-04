@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>中奖记录</title>
+    <!--<link rel="stylesheet" href="{{ url_for('static', filename='web/static/assets/css/style.css') }}">-->
+    <!--<link rel="stylesheet" href="{{ url_for('static', filename='web/static/assets/css/wheel.css') }}">-->
+    <style>
+        .grad {
+		  background: -webkit-linear-gradient(left,rgba(206,244,251,1),rgba(222,246,251,0)); /* Safari 5.1 - 6 */
+		  background: -o-linear-gradient(left,rgba(206,244,251,1),rgba(222,246,251,0)); /* Opera 11.1 - 12*/
+		  background: -moz-linear-gradient(left,rgba(206,244,251,1),rgba(222,246,251,0)); /* Firefox 3.6 - 15*/
+		  background: linear-gradient(to right, rgba(201, 225, 230, 0.6),rgba(191, 211, 216, 0.2)); /* 标准的语法 */
+		}
+        .history-list {position: relative; font-size: 0.8rem;background-color: #dcf6fb;border: 1px solid #66d9ef;color: #2d597c;padding-top: 1rem;border-radius: 10px;}
+		.history-list dl{margin-bottom: 1rem;}
+		.history-list dl dt{color: #d4390c;line-height: 220%;padding: 0 3rem;}
+		.history-list dl dt span{float: right;}
+		.history-list dl dd{line-height: 220%;margin:0 3rem;}
+		.history-list dl dd:last-child{border-bottom: 1px dashed #000;}
+        .user_profile{
+			position: absolute;
+		    bottom: 0;
+		    color: #d4390c;
+		    left: 0;
+		    background: #f59d9b;
+		    border-bottom-left-radius: 10px;
+		    border-bottom-right-radius: 10px;
+		    padding: 0.2rem;
+		    text-align: center;
+            width: 100%;
+            height:4.8rem;
+		}
+		.user_profile img{
+			width: 20%;
+    		vertical-align: bottom;
+    	}
+    </style>
+</head>
+<body>
+<div class="history-list">
+    {% for item in lists %}
+	  <dl>
+		<dt class="grad">
+			第{{item['round']}}期
+			<span>
+				奖励：{{item['title']}}
+			</span>
+		</dt>
+		<dd>
+			奖励玩家：{{item['nick']}}
+		</dd>
+		<dd>
+			开奖时间：{{item['create_time']}}
+		</dd>
+	</dl>
+    {% endfor %}
+    {% if not uid %}
+    <div style="height: 4.8rem;;"></div>
+    <div class="user_profile"><span>(请获得实物玩家填写个人信息领取奖励)</span> <a href="#"><img src="/web/static/assets/images/user_profile_btn.png" /></a></div>
+    {% endif %}
+</div>
+
+</body>
+</html>

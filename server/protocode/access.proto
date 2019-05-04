@@ -1,0 +1,91 @@
+
+syntax = "proto2";
+
+package cardgame;
+
+
+import "struct.proto";
+
+option optimize_for = LITE_RUNTIME;
+
+option java_package = "com.zhili.cardgame.proto";  
+option java_outer_classname = "Access";  
+
+
+message ConnectGameServerReq {
+	enum DEF {
+		ID = 40;
+	}
+	required int32 session = 2;
+}
+
+message ConnectGameServerResp {
+	enum DEF {
+		ID = 41;
+	}
+	optional int64 server_time = 1;
+}
+
+message HeartbeatReq {
+	enum DEF {
+		ID = 100;
+	}
+}
+message HeartbeatResp {
+	enum DEF {
+		ID = 101;
+	}
+}
+
+message GetServerTimeReq {
+    enum DEF {
+		ID = 106;
+	}
+}
+
+message GetServerTimeResp {
+    enum DEF {
+		ID = 107;
+	}
+	optional int64 server_time = 1;
+}
+
+message QuitGameServerReq {
+    enum DEF {
+        ID = 110;
+    }
+}
+
+message QuitGameServerResp {
+    enum DEF {
+        ID = 111;
+    }
+}
+
+message OnlineReq {
+    enum DEF {
+        ID = 120;
+    }
+    required int32 uid = 1;
+    required int32 access_service_id = 2;
+}
+
+message OnlineResp {
+    enum DEF {
+        ID = 121;
+    }
+}
+
+message OfflineReq {
+	enum DEF {
+		ID = 130;
+	}
+	required int32 uid = 1;
+}
+
+message OfflineResp {
+	enum DEF {
+		ID = 131;
+	}
+}
+

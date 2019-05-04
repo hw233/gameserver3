@@ -1,0 +1,129 @@
+syntax = "proto2";
+package cardgame;
+
+import "constant.proto";
+import "struct.proto";
+option optimize_for = LITE_RUNTIME;
+option java_package = "com.zhili.cardgame.proto";  
+option java_outer_classname = "Trade";
+
+message QueryShopReq {
+    enum DEF {
+        ID = 3000;
+    }
+}
+
+message QueryShopResp {
+    enum DEF {
+        ID = 3001;
+    }
+	repeated ShopItem items = 1;
+}
+
+message BuyItemReq {
+    enum DEF {
+        ID = 3002;
+    }
+	required int32 shop_item_id = 1;
+	required int32 count = 2;
+}
+
+message BuyItemResp {
+    enum DEF {
+        ID = 3003;
+    }
+	optional Result result = 1;
+}
+
+
+message QueryTradeReq {
+    enum DEF {
+        ID = 3004;
+    }
+	required int32 page = 1;
+	required int32 page_size = 2;
+	required bool can_buy = 3;
+	required bool my_sell = 4;
+}
+
+message QueryTradeResp {
+    enum DEF {
+        ID = 3005;
+    }
+	repeated Trade trades = 1;
+	required int32 total = 2;
+}
+
+message BuyTradeReq {
+    enum DEF {
+        ID = 3006;
+    }
+	required int32 trade_id = 1;
+}
+
+message BuyTradeResp {
+    enum DEF {
+        ID = 3007;
+    }
+	optional Result result = 1;
+}
+
+
+message SellGoldReq {
+    enum DEF {
+        ID = 3008;
+    }
+	required int32 gold = 1;
+	required int32 diamond = 2;
+}
+
+message SellGoldResp {
+    enum DEF {
+        ID = 3009;
+    }
+	optional Result result = 1;
+}
+
+message OutGoldReq {
+    enum DEF {
+        ID = 3010;
+    }
+    required int32 trade_id = 1;
+}
+
+message OutGoldResp {
+    enum DEF {
+        ID = 3011;
+    }
+	optional Result result = 1;
+}
+
+message QueryFlowReq {
+    enum DEF {
+        ID = 3012;
+    }
+}
+
+message QueryFlowResp {
+    enum DEF {
+        ID = 3013;
+    }
+	repeated FlowItem items = 1;
+}
+
+message BuyFlowItemReq {
+    enum DEF {
+        ID = 3014;
+    }
+	required int32 shop_item_id = 1;
+	required int64 mobile = 2;
+    required string desc =3;
+}
+
+message BuyFlowItemResp {
+    enum DEF {
+        ID = 3015;
+    }
+	optional int32 incr_flow_card = 1;  // 增量数据
+	optional int32 flow_card = 2;             // 用户全量数据
+}

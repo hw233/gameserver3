@@ -1,0 +1,117 @@
+syntax = "proto2";
+
+package cardgame;
+
+option optimize_for = LITE_RUNTIME;
+
+option java_package = "com.zhili.cardgame.proto";  
+option java_outer_classname = "Constant";  
+ 
+ 
+enum IDScope {
+	ID_SYSTEM = 0;
+	ID_HALL = 1000;
+	ID_CHAT = 1200;
+	ID_REWARD = 2000;
+	ID_TRADE = 3000;
+	ID_BAG = 3500;
+	ID_FRIEND = 4000;
+	ID_RANK = 4200;
+	
+	ID_GAME = 5000;
+	ID_LOTTERY = 5500;
+	ID_TEXTAS = 5600;
+} 
+ 
+ //房间事件
+enum TableEventType {
+	PLAYER_JOIN = 1;//进入房间
+	PLAYER_LEAVE = 2;//离开房间
+	PLAYER_RECONNECTED = 3; 
+	PLAYER_DISCONNECTED = 4;
+	PLAYER_KICKED = 5;
+	PLAYER_UPDATED = 6;//玩家信息更新
+}
+
+//玩牌过程中动作类型
+enum BetAction{
+	FOLLOW = 1;//跟注
+	ADD = 2;//加注
+	COMPARE = 3;//比牌
+	SHOW_HAND = 4;//全押
+	GIVE_UP = 5;//弃牌
+	SEE_POKER = 6;//看牌
+}
+
+//牌桌类型
+enum TableType {
+	TABLE_L = 1;//低级场
+	TABLE_M = 2;//中级场
+	TABLE_H = 3;//高级场
+	TABLE_H2 = 4; // 大师场
+	TABLE_WAR = 5; // 红黑
+}
+
+//牌型
+enum PokerType {
+	P_BAOZI = 10;
+	P_TONGHUASHUN = 9;
+	P_TONGHUA = 8;
+	P_SHUN = 7;
+	P_DUI = 6;
+	P_DAN = 5;
+	P_352 = 4;
+}
+
+// 排行榜类型
+enum RankType {
+	RANK_WEALTH = 1;
+	RANK_CHARGE = 2;
+	RANK_CHARM = 3;
+	RANK_MAKE_MONEY = 4;
+	RANK_WAR = 5;
+	RANK_TEXAS = 6;
+	RANK_LOTTERY = 7;
+}
+
+// 排行榜参数
+enum RankTime{
+	RANK_ALL_TIME = 0;
+	RANK_YESTERDAY = 1;
+	RANK_TODAY = 2;
+	RANK_LAST_MONTH = 3;
+	RANK_THIS_MONTH = 4;
+	RANK_LAST_WEEK = 5;
+	RANK_THIS_WEEK = 6;
+}
+
+enum ShopItemType {
+	SHOP_GOLD = 1;
+	SHOP_ITEM = 2;
+}
+
+enum NotificationType {
+	N_BROADCAST = 1;
+	N_MAIL = 2;
+	N_REWARD = 3;
+	N_GIFT_RECEIVED = 4;
+	N_KICK_OFF = 5;//强制下线
+	N_CHARGE = 6; // 充值成功
+	N_FRIEND_APPLY = 7;//好友申请
+	N_EXP_UPGRADE = 8; //exp升级
+	N_H5 = 9; //网页端事件
+	N_TEXAS = 10; //德
+}
+
+enum RewardType {
+    DONE = 0;      // 已完成，已领取
+    SUCCESS = 1;   // 已完成，未领取
+    NO_TASK = -1;  // 未完成
+}
+
+enum ChatType {
+	CHAT_WORD = 1;
+	CHAT_ZJH = 2;
+	CHAT_WAR = 3;
+	CHAT_TEXAS = 4;
+}

@@ -1,0 +1,236 @@
+syntax = "proto2";
+package cardgame;
+import "constant.proto";
+import "struct.proto";
+option optimize_for = LITE_RUNTIME;
+option java_package = "com.zhili.cardgame.proto";  
+option java_outer_classname = "Hall";
+
+message QueryHallReq {
+	enum DEF {
+		ID = 1000;
+	}
+	required int32 max_mail_id = 1;
+	required int32 max_announcement_id = 2;
+}
+
+
+message QueryHallResp {
+	enum DEF {
+		ID = 1001;
+	}
+	optional PlayerBrief brief = 1;
+	optional Notification notification = 2;
+	repeated Announcement announcements = 3;
+	optional bool is_signin = 4;
+	optional bool is_charge = 5;
+    optional string table_game_conf = 6;
+    optional string broadcast_json = 7;
+    optional bool is_first_login = 8;
+	optional string activity_url = 9;
+	optional string horn_history = 10;
+    optional string mobile = 11;
+    optional int32 avatar_verify = 12; // 0 = 审核中，1=成功，-1=拒绝
+
+}
+
+
+message QueryUserReq {
+    enum DEF{
+        ID = 1002;
+    }
+    required int32 uid = 1;
+}
+
+message QueryUserResp {
+    enum DEF{
+        ID = 1003;
+    }
+    optional Player player = 1;
+    optional string update_avatar_url = 2;
+    optional bool is_charge = 3;
+    optional int32 flow_card = 4;
+    optional int32 avatar_verify = 5; // 0 = 审核中，1=成功，-1=拒绝
+}
+
+message UpdateUserReq {
+    enum DEF {
+        ID = 1004;
+    }
+
+    optional string birthday = 1;
+    optional string sign = 2;
+    optional string contact = 3;
+    optional string address = 4;
+    optional string nick = 5;
+    optional string avatar = 6;
+    optional string sex = 7;
+}
+
+message UpdateUserResp {
+	enum DEF {
+		ID = 1005;
+	}
+	
+	optional Result result = 1;
+}
+
+message QueryAnnouncementsReq {
+	enum DEF {
+        ID = 1006;
+    }
+    required int32 max_announcement_id = 1;
+}
+
+message QueryAnnouncementsResp{
+    enum DEF {
+        ID = 1007;
+    }
+	repeated Announcement announcements = 1;
+} 
+
+
+message SendGiftReq {
+	enum DEF {
+		ID = 1008;
+	}
+	required int32 gift_id = 1;
+	required int32 count = 2;
+	required int32 other = 3;
+}
+
+message SendGiftResp {
+	enum DEF {
+		ID = 1009;
+	}
+	optional Result result = 1;
+}
+
+message NotificationEvent {
+	enum DEF {
+		ID = 1100;
+	}
+	required NotificationType type = 1;
+	optional int32 param1 = 2;
+	optional string param2 = 3;
+}
+
+message FeedBackReq {
+    enum DEF {
+        ID = 1120;
+    }
+    required string message = 1;
+    required string contact = 2;
+}
+
+message FeedBackResp {
+    enum DEF {
+        ID = 1121;
+    }
+}
+
+message CreateOrderReq {
+    enum DEF {
+        ID = 1150;
+    }
+    required int32 shop_id = 1;
+    optional string comment = 2;
+}
+
+message CreateOrderResp {
+    enum DEF {
+        ID = 1151;
+    }
+    optional string order_sn = 1;
+    optional int32 money = 2;
+    optional string callback = 3;
+    optional string name = 4;
+}
+
+message QueryChargeReq {
+    enum DEF {
+        ID = 1152;
+    }
+}
+
+message QueryChargeResp {
+    enum DEF {
+        ID = 1153;
+    }
+    repeated ChargeItem items = 1;
+}
+
+//查询快速补币
+message QueryQuickBuyGoldReq {
+    enum DEF {
+       ID = 1154;
+    }
+    required int32 table_type = 1;
+}
+
+
+message QueryQuickBuyGoldResp{
+    enum DEF {
+      ID = 1155;
+    }
+    optional int32 money = 1;
+    optional int32 gold = 2;
+
+}
+
+//首充数据查询
+message QueryFirstTimeChargeReq{
+	enum DEF {
+            ID = 1156;
+	}
+}
+
+
+message QueryFirstTimeChargeResp{
+	enum DEF {
+	 ID = 1157;
+	}
+	optional int32 money = 1;
+	optional int32 diamond = 2;
+	optional int32 gold = 3;
+	optional int32 hore = 4;
+	optional int32 kicking_card = 5;
+	optional int32 vip_card = 6;
+
+}
+
+message BindMobileReq {
+	enum DEF{
+		ID = 1158;
+	}
+
+	required int32 uid = 1;
+	required string mobile = 2;
+	optional string verify_code = 3;
+	required int32 bind_type = 4; //绑定类型：1：新用户绑定（password必传）,  2：绑定新手机号（password不传）, 3：解绑旧手机资格校验（password不传），4：只验证手机号是否被绑定过
+	optional string password= 5;
+}
+
+message BindMobileResp {
+	enum DEF{
+		ID = 1159;
+	}
+}
+
+message PopActivityReq {
+    enum DEF{
+        ID = 1122;
+    }
+}
+
+message PopActivityResp {
+    enum DEF{
+        ID = 1123;
+    }
+    optional int32 id = 1;
+    optional string title = 2;
+    optional string desc = 3;
+    optional int32 gold = 4;
+    optional int32 money = 5; //单位：分
+    optional int32 end_time = 6;
+}

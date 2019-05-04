@@ -1,0 +1,39 @@
+syntax = "proto2";
+package cardgame;
+
+import "struct.proto";
+option optimize_for = LITE_RUNTIME;
+option java_package = "com.zhili.cardgame.proto";  
+option java_outer_classname = "Bag";
+
+
+message QueryBagReq {
+	enum DEF {
+		ID = 4200;
+	}
+	
+}
+
+message QueryBagResp {
+	enum DEF {
+		ID = 4201;
+	}
+	repeated Item items = 1;
+	repeated Gift gifts = 2;
+}
+
+message UseItemReq {
+	enum DEF {
+		ID = 4202;
+	}
+	required int32 item_id = 1;
+	required int32 count = 2;
+}
+
+message UseItemResp {
+	enum DEF {
+		ID = 4203;
+	}
+	optional Result result = 1;
+}
+

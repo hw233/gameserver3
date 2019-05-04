@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <!-- UC强制竖屏 -->
+	<meta name="screen-orientation" content="portrait">
+	<!-- QQ强制竖屏 -->
+	<meta name="x5-orientation" content="portrait">
+	<!-- UC强制全屏 -->
+	<meta name="full-screen" content="yes">
+	<!-- QQ强制全屏 -->
+	<meta name="x5-fullscreen" content="true">
+
+    <title>Title</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='web/static/assets/css/style.css') }}">
+<style>
+		.go-back{
+    position: absolute;
+    top: 0.8rem;
+    left: 0.4rem;
+}
+
+/*活动中心*/
+.wrap {
+    margin: 0 0;
+}
+.wrap .menu{
+    /*float: left;*/
+    /*margin-right: 1rem;*/
+    /*margin-left: 0.4rem;*/
+}
+.wrap .content{
+    /*float: left;*/
+    padding: 0 0.4rem;
+}
+.content h3.title{
+	text-indent: -9999px;
+    background: #372452;
+    width: 50%;
+    border-radius: 10px;
+    border: 1px dashed #fff;
+    text-align: center;
+    color: #faedc3;
+    font-family: '微软雅黑';
+
+    margin-bottom: 0.4rem;
+}
+
+
+.content .page{
+    /*float: left;*/
+    border-radius: 0.4rem;
+    border: 2px solid #fff;
+    background: #372452;
+    padding: 0.2rem;
+}
+.menu .button{
+
+    position:relative;
+    display: block;
+    font-size: 12px;
+    border-radius: 0.6rem;
+    border: 3px solid #fff;
+    text-align: center;
+    width: 5.33rem;
+    height: 2.16rem;
+    line-height: 2.16rem;
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 1rem;
+}
+
+h2 {
+  font-weight: normal;
+  position: relative;
+  background: #F4F9FA;
+  font-family: "微软雅黑"," 黑体";
+  width: 50%;
+  color: #372452;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px 20px;
+  margin: 0 auto 10px;
+  text-transform: uppercase;
+  border-radius: 2px;
+}
+h2:before, h2:after {
+  content: "";
+  position: absolute;
+  display: block;
+  top: -6px;
+  border: 18px solid #DCF4F4;
+}
+h2:before {
+  left: -36px;
+  border-right-width: 18px;
+  border-left-color: transparent;
+}
+h2:after {
+  right: -36px;
+  border-left-width: 18px;
+  border-right-color: transparent;
+}
+h2 span:before, h2 span:after {
+  content: "";
+  position: absolute;
+  display: block;
+  border-style: solid;
+  border-color: #A7CECC transparent transparent transparent;
+  top: -6px;
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+h2 span:before {
+  left: 0;
+  border-width: 6px 0 0 6px;
+}
+h2 span:after {
+  right: 0;
+  border-width: 6px 6px 0 0;
+}
+	</style>
+
+</head>
+<body>
+	<div class="wrap">
+		<table width="100%">
+            <tr>
+                <td align="center" style="height:2.4rem;"><a href="#" id="goback" style="height: 1rem;"><img style="width: 2rem;" src="{{ url_for('static', filename='web/static/assets/images/activity/btn_back.png') }}"></a></td>
+                <td align="center"><img style="width: 40%;" src="{{ url_for('static', filename='web/static/assets/images/activity/banner.png') }}" style="width: 62%;" alt=""></td>
+            </tr>
+			<tr>
+				<td valign="top" align="center" width="18%">
+					<div class="menu">
+						<ul>
+							<li>
+								<a href="wheel" target="main" data-comment="wheel" class="button gradient gradient-active go_main">
+								幸运转盘
+								</a>
+							</li>
+							<!--<li><a href="http://www.baidu.com/" target="main" class="button gradient">幸运转盘1</a></li>-->
+							<!--<li><a href="http://www.bing.com/#" target="main" class="button gradient">幸运转盘2</a></li>-->
+						</ul>
+					</div>
+				</td>
+				<td valign="top" align="left">
+					<div class="content">
+						<div class="page">
+							<iframe frameborder="0" width="100%" height="100%" marginheight="0" marginwidth="0" scrolling="no" id="main" name="main" src=""></iframe>
+						</div>
+					</div>
+				</td>
+			</tr>
+		</table>
+
+	</div>
+	<!--<div class="go-back">-->
+		<!--<a href="#" id="goback"><img style="width: 2rem;" src="{{ url_for('static', filename='web/static/assets/images/activity/btn_back.png') }}"></a>-->
+	<!--</div>-->
+<script src="https://cdn.bootcss.com/jquery/1.8.3/jquery.min.js"></script>
+<script>
+
+	var main_height = null;
+    var URL = '{{ GO_BACK }}'
+    var UID = null;
+    $(document).ready(function(){
+
+        $('.go_main').on('click', function(e){
+            e.preventDefault()
+
+            UID = geturlparam('uid')
+            var COMMENT = $('.go_main').data('comment');
+            aHref = $('.go_main').attr('href')
+            var main_href = aHref+'?uid='+UID+'&comment='+COMMENT
+
+            $('#main').attr('src', main_href)
+        })
+
+        $('#goback').on('click', function(){
+            if(UID == null) return
+            $.getJSON(URL,{
+				'uid':UID,
+				d:new Date().getTime()
+			},function(data){
+                if(data.code == 0){
+                    layer.open({
+						style:'background-color:#00d12e;color:#fff',
+						content: '请稍等...',
+						time:3
+					  });
+                }
+            })
+//            callJavaMethod({
+//                'tag':'activity_back',
+//                'data':{}
+//            })
+        })
+
+        $('.go_main').click()
+    });
+	window.onload=function(){
+		$('.menu li a').click(function(){
+			$('.menu li a').each(function(){
+				$(this).removeClass('gradient-active')
+			})
+			$(this).addClass('gradient-active')
+		});
+	};
+//调用java函数，并且传json参数过去
+function callJavaMethod(s){
+	window.callandroid.callFromJs(JSON.stringify(s));
+}
+//获取url的uid参数
+function geturlparam(name){
+	  var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+	  var r = window.location.search.substr(1).match(reg);
+	  if (r != null) return unescape(r[2]); return null;
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+syntax = "proto2";
+package cardgame;
+
+import "struct.proto";
+import "constant.proto";
+
+option java_package = "com.zhili.cardgame.proto";  
+option java_outer_classname = "Mail";
+
+option optimize_for = LITE_RUNTIME;
+
+message FetchMailReq {
+    enum DEF {
+        ID = 1400;
+    }
+    optional int32 max_mail_id = 1;
+}
+
+
+message FetchMailResp {
+    enum DEF {
+        ID = 1401;
+    }    
+    repeated Mail mails = 1;
+}
+
+message ReceiveAttachmentReq {
+    enum DEF {
+        ID = 1402;
+    }
+    required int32 mail_id = 1;
+}
+
+message ReceiveAttachmentResp {
+    enum DEF {
+        ID = 1403;
+    }
+    optional Result result = 1;
+}
+
+
+message SendMailReq {
+	enum DEF {
+		ID = 1405;
+	}
+	
+	required int32 to = 1;
+	required string title = 2;
+	required string content = 3;
+}
+
+message SendMailResp {
+	enum DEF {
+		ID = 1406;
+	}
+}

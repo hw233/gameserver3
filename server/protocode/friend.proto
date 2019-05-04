@@ -1,0 +1,125 @@
+syntax = "proto2";
+package cardgame;
+
+import "struct.proto";
+
+option java_package = "com.zhili.cardgame.proto";  
+option java_outer_classname = "Friend";
+
+option optimize_for = LITE_RUNTIME;
+
+
+message GetFriendsReq {
+	enum DEF {
+		ID = 4000;
+	}
+	optional int32 page = 1;
+	optional int32 page_size = 2;
+}
+
+message GetFriendsResp {
+	enum DEF {
+		ID = 4001;
+	}
+	repeated Friend friends  = 1;
+	required int32 count = 2;
+}
+
+
+message GetFriendAppliesReq {
+    enum DEF {
+        ID = 4002;
+    }
+    optional int32 page = 1;
+	optional int32 page_size = 2;
+}
+
+message GetFriendAppliesResp {
+    enum DEF {
+        ID = 4003;
+    }
+    repeated FriendApply applies = 2;
+}
+
+message SendFriendMessageReq {
+	enum DEF {
+		ID = 4006;
+	}
+	required int32 friend_id = 1;
+	required string message = 2;
+}
+
+message SendFriendMessagetResp {
+	enum DEF {
+		ID = 4007;
+	}
+}
+
+message MakeFriendReq {
+	enum DEF {
+		ID = 4008;
+	}
+	required int32 target = 1;
+	optional string message = 2;
+	repeated Gift gifts = 3;
+}
+
+message MakeFriendResp {
+	enum DEF {
+		ID = 4009;
+	}
+}
+
+message HandleFriendApplyReq {
+	enum DEF {
+		ID = 4010;
+	}
+	required int32 apply_id = 1;
+	required bool accept = 2; // 同意=true，拒绝=false
+}
+
+message HandleFriendApplyResp {
+	enum DEF {
+		ID = 4011;
+	}
+}
+
+message ReceiveFriendMessageReq {
+	enum DEF {
+		ID = 4012;
+	}
+	required int32 message_id = 1;
+}
+
+message ReceiveFriendMessageResp {
+	enum DEF {
+		ID = 4013;
+	}
+}
+
+message RemoveFriendMessageReq {
+	enum DEF {
+		ID = 4014;
+	}
+	required int32 friend_id = 1;
+}
+
+message RemoveFriendMessageResp {
+	enum DEF {
+		ID = 4015;
+	}
+}
+
+message FriendMessageEvent {
+	enum DEF {
+		ID = 4050;
+	}
+	required FriendMessage message = 1;
+}
+
+message FriendApplyEvent {
+	enum DEF {
+		ID = 4051;
+	}
+	required FriendApply apply = 1;
+}

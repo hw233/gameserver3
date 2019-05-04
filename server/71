@@ -1,0 +1,38 @@
+nohup: 忽略输入
+MainThread 2019-01-06 11:50:24,544 INFO System Starting -> loading configuration system.ini
+MainThread 2019-01-06 11:50:24,547 INFO System Starting -> creating server instance and initializing
+MainThread 2019-01-06 11:50:24,547 INFO System Starting -> preparing starting 
+MainThread 2019-01-06 11:50:24,547 INFO Installing Services Now
+MainThread 2019-01-06 11:50:24,586 INFO [1minstall service ==> texas.texasroomservice.TexasRoomService(5600)[0m
+MainThread 2019-01-06 11:50:24,632 INFO [1minstall service ==> access.accessservice.AccessService(100)[0m
+MainThread 2019-01-06 11:50:24,655 INFO [1minstall service ==> goldflower.roomservice.RoomService(200)[0m
+MainThread 2019-01-06 11:50:24,840 INFO [1minstall service ==> main.mainservice.MainService(10)[0m
+MainThread 2019-01-06 11:50:24,849 INFO [1minstall service ==> hall.rankservice.RankService(82)[0m
+MainThread 2019-01-06 11:50:25,213 INFO [1minstall service ==> hall.hallservice.HallService(80)[0m
+MainThread 2019-01-06 11:50:25,242 INFO [1minstall service ==> hall.announcementservice.AnnouncementService(81)[0m
+MainThread 2019-01-06 11:50:25,291 INFO [1minstall service ==> goldflower.goldflowerservice.GoldFlowerService(210)[0m
+MainThread 2019-01-06 11:50:25,313 INFO [1minstall service ==> hall.chargeservice.ChargeService(83)[0m
+MainThread 2019-01-06 11:50:25,329 INFO [1minstall service ==> lottery.lotteryservice.LotteryService(5500)[0m
+MainThread 2019-01-06 11:50:25,438 INFO Setup network configuration....
+MainThread 2019-01-06 11:50:25,439 INFO [31mSystem Started[0m
+DummyThread-1 2019-01-06 11:50:25,439 INFO Table 初始化...
+DummyThread-1 2019-01-06 11:50:25,462 INFO 加载最后大赢家: <Player uid=48461,access_service=-1,user_info=None,timeout=1546746645>
+DummyThread-1 2019-01-06 11:50:25,464 INFO 加载奖池金币数：50920274
+DummyThread-1 2019-01-06 11:50:25,466 INFO 加载豹子最后出现时间：1546744443
+DummyThread-1 2019-01-06 11:50:25,468 INFO 加载历史牌型记录：[5, 6, 6, 5, 8, 6, 5, 8, 5, 9, 7, 7, 5]
+DummyThread-1 2019-01-06 11:50:25,470 INFO  
+DummyThread-1 2019-01-06 11:50:25,470 INFO 游戏初始化...
+DummyThread-1 2019-01-06 11:50:25,470 INFO start_time=1546746625, reward_gold=50920274, real_gold=0
+DummyThread-1 2019-01-06 11:50:25,470 INFO 减半检查，count=0
+DummyThread-1 2019-01-06 11:50:25,470 INFO real_gold_pool=0,half_gold_count=1
+DummyThread-1 2019-01-06 11:50:25,478 INFO 加载未完成自动投注记录：[]
+DummyThread-1 2019-01-06 11:50:25,478 INFO 剩余用户：users={}
+DummyThread-1 2019-01-06 11:50:25,478 INFO  
+DummyThread-1 2019-01-06 11:50:25,478 INFO 游戏运行中...
+DummyThread-1 2019-01-06 11:50:25,479 INFO 牌型投注(0)：{5: 866000, 6: 1228000, 7: 372000, 8: 478000, 9: 5222000, 10: 2000}
+DummyThread-1 2019-01-06 11:50:27,481 INFO 牌型投注(2)：{5: 1938000, 6: 2160000, 7: 750000, 8: 852000, 9: 5500000, 10: 4000}
+DummyThread-1 2019-01-06 11:50:29,484 INFO 牌型投注(4)：{5: 3060000, 6: 3082000, 7: 1318000, 8: 1182000, 9: 5682000, 10: 4000}
+DummyThread-1 2019-01-06 11:50:31,486 INFO 牌型投注(6)：{5: 4076000, 6: 4454000, 7: 2038000, 8: 1452000, 9: 5904000, 10: 6000}
+DummyThread-1 2019-01-06 11:50:33,488 INFO 牌型投注(8)：{5: 4746000, 6: 5836000, 7: 2754000, 8: 1980000, 9: 6186000, 10: 8000}
+DummyThread-1 2019-01-06 11:50:35,491 INFO 牌型投注(10)：{5: 5728000, 6: 6304000, 7: 3478000, 8: 2260000, 9: 6408000, 10: 8000}
+DummyThread-1 2019-01-06 11:50:37,493 INFO 牌型投注(12)：{5: 7150000, 6: 7068000, 7: 8854000, 8: 2626000, 9: 6722000, 10: 10000}

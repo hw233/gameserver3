@@ -1,0 +1,260 @@
+syntax = "proto2";
+package cardgame;
+
+import "constant.proto";
+import "struct.proto";
+option optimize_for = LITE_RUNTIME;
+option java_package = "com.zhili.cardgame.proto";  
+option java_outer_classname = "Game";
+
+
+
+message SitWarTableReq {
+    enum DEF {
+        ID = 6000;
+    }
+}
+
+message SitWarTableResp {
+    enum DEF {
+        ID = 6001;
+    }
+    optional WarTable table = 1;
+    optional WarPlayer player = 2;
+	optional int64 red_total = 3;
+	optional int64 black_total = 4;
+	optional int64 lucky_total = 5;
+
+
+}
+
+
+
+message WarTable {
+	optional WarPlayer lucky_player = 1;
+	repeated WarPlayer rich_players = 2;
+	required int64 reward_pool = 3;//奖池金币
+	required int32 countof_players = 4;//当前玩家总数
+	repeated WarBriefGameResult history = 5;//走势图
+	required int32 state = 6; // 状态：0:进行中，1：结算中,如果是0，则chips字段为桌面筹码数据，如果是1，result为结算数据
+	optional WarTableChips chips = 7;//桌面筹码数据，可为空
+	optional WarGameResult result = 8;//结算数据，可为空
+	optional int32 remain_time = 9; //游戏揭晓的剩余时间，单位：毫秒
+}
+
+
+message WarPlayer {
+	required int32 uid = 1;
+	required string avatar = 2;
+	required string nick = 3;
+	required int32 sex = 4;
+	required int64 gold = 5;
+	required int64 diamond = 6;
+	required int32 seat = 7;
+	required int32 total_games = 10;
+	required int32 max_win_gold = 11;
+	required int32 recent_rich_rank = 12;
+	required int32 recent_win_games = 13;
+	required int64 recent_bet_gold = 14;
+	optional int64 reward_gold = 15; // 中奖赢得的钱
+    optional int32 vip_exp = 16; //
+}
+
+message WarChip {
+	required int64 gold = 1;
+}
+
+message WarChips {
+	required int64 gold = 1;//金币值
+	required int32 countof = 2;//该金币值的个数
+}
+
+message WarPlayerGameResult {
+	required int32 uid = 1;
+	required int64 bet_gold = 2;
+	required int64 win_gold = 3;
+	required int64 fee = 4;
+	required int64 gold = 5;
+	optional int64 reward_gold = 15; // 中奖赢得的钱
+}
+
+message WarGameResult {
+	repeated Poker red_pokers = 1;
+	required PokerType red_poker_type = 2;
+	optional int32 red_morethan_88 = 3;//红方如果对子是否大于对8
+	repeated Poker black_pokers = 4;
+	required PokerType black_poker_type = 5;  
+	optional int32 black_morethan_88 = 6;//黑方如果对子是否大于对8
+	required int32 result = 7; // >0 红胜，0和，<0 黑胜
+	required int32 lucky_rate = 8; // 幸运一击的赔率
+	required int32 reward_gold = 9;//奖池数量
+	repeated WarPlayer top3_winners = 10;//开奖玩家前三名
+	repeated WarPlayerGameResult player_results = 11; //牌桌内玩家结算
+	required int64 other_gold = 12; // 其它玩家赢钱数量
+}
+
+message WarBriefGameResult { 
+	required int32 id = 1;
+	required int32 winner = 2;  // >0 红，0：和，<0 黑
+	required PokerType winner_poker_type = 3;
+	required int32 lucky_rate = 4;  // 幸运一击的赔率
+    optional int32 winner_continuous=5;// 连续胜利局数  用于走势图牌路
+}
+
+message WarTableChips {
+	repeated WarChip red_chips = 1;
+	repeated WarChip black_chips = 2;
+	repeated WarChip lucky_chips = 3; 
+}
+
+
+
+
+
+//离开房间到大厅
+message LeaveWarTableReq {
+    enum DEF {
+        ID = 6002;
+    }
+}
+
+message LeaveWarTableResp {
+    enum DEF {
+        ID = 6003;
+    }
+}
+
+
+message WarBetActionReq {
+    enum DEF {
+        ID = 6004;
+    }
+    required int32 action_type = 1;  // 1 红，0：幸运一击，-1 黑
+    required WarChip chip = 2;
+}
+
+message WarBetActionResp {
+    enum DEF {
+        ID = 6005;
+    }
+    optional int32 action_type = 1;  // 1 红，0：幸运一击，-1 黑
+    optional WarChip chip = 2;
+    optional int64 gold = 3;
+}
+
+
+message WarGameStartEvent {
+    enum DEF {
+        ID = 6101;
+    }
+    required WarTable table = 1;
+}
+		
+
+//游戏结束事件
+message WarGameOverEvent {
+    enum DEF {
+        ID = 6102;
+    }
+    required WarGameResult result = 1;
+    optional WarPlayerGameResult my_result = 2;
+    optional WarPlayer big_winner = 3; // 大赢家
+    optional WarPlayerGameResult big_winner_result = 4; // 大赢家
+}
+
+
+message WarGameActionEvent {
+    enum DEF {
+        ID = 6103;
+    }
+    required int32 player = 1;//玩家uid
+    required int32 action_type = 2;  // 1 红，0：幸运一击，-1 黑
+    required WarChip chip = 3;//消耗金币
+    optional int64 bet_gold = 4;//总消费金币
+    optional int64 gold = 5;//剩余金币
+}
+
+message WarGameOtherActionEvent {
+	enum DEF {
+        ID = 6104;
+    }
+    repeated WarChips red_chips = 1;
+    repeated WarChips black_chips = 2;
+    repeated WarChips lucky_chips = 3;
+}
+
+
+message QueryPoolRankReq {
+    enum DEF {
+        ID = 6105;
+    }
+}
+
+message QueryPoolRankResp {
+    enum DEF {
+        ID = 6106;
+    }
+    repeated PoolRankPlayer players = 1;
+}
+message PoolRankPlayer {
+    required int32 uid = 1;
+    required string avatar = 2;
+    required string nick = 3;
+    required int64 total_award  = 4;//总奖金
+    required int64 award  = 5;//奖金
+    required int32 award_winners  = 6;//中奖人数
+    required int64 time  = 7;//上榜时间
+    optional int32 sex = 8;
+    optional int32 vip_exp = 9;
+}
+message QueryTrendReq {
+    enum DEF {
+        ID = 6107;
+    }
+}
+message QueryTrendResp {
+    enum DEF {
+        ID = 6108;
+
+    }
+    repeated WarBriefGameResult history = 1;//牌局20
+    repeated WarBriefGameResult history_road = 2;//牌路20 记录连胜，需要传winner_continuous
+}
+
+message KickTableEvent {
+	enum DEF {
+        ID = 6109;
+    }
+}
+
+message QueryWarPlayerReq {
+    enum DEF{
+        ID = 6110;
+    }
+    required int32 uid = 1;
+}
+
+message QueryWarPlayerResp {
+    enum DEF{
+        ID = 6111;
+    }
+    optional WarPlayer player = 1;
+}
+
+
+
+
+message QueryRichReq {
+	enum DEF {
+		ID = 6112;
+	}
+	required int32 size = 1;
+}
+
+message QueryRichResp {
+	enum DEF {
+		ID = 6113;
+	}
+	repeated WarPlayer players = 1;
+	optional int32 my_rank = 2;
+}

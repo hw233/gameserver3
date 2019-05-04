@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <title>Title</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='web/static/assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='web/static/assets/css/wheel.css') }}">
+</head>
+<body>
+<div class="circles">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+</div>
+<table width="100%">
+	<tr>
+		<td width="45%" align="center">
+			<div class="opt">
+				<a href="#" id="win-history-score">往期记录</a>
+				剩余次数：<span id="user_remain_play">{{ data['play_count']}}</span>
+			</div>
+			<div class="wheel">
+				<img src="{{ url_for('static', filename='web/static/assets/images/1.png') }}" id="shan-img" style="display:none;" />
+				<img src="{{ url_for('static', filename='web/static/assets/images/2.png') }}" id="sorry-img" style="display:none;" />
+				<div class="banner">
+					<div class="turnplate" style="background-image:url({{ url_for('static', filename='web/static/assets/images/turnplate-bg.png') }});background-size:100% 100%;">
+						<canvas class="item" id="wheelcanvas" width="422px" height="422px"></canvas>
+						<img class="pointer" src="{{ url_for('static', filename='web/static/assets/images/pointer.png') }}"/>
+						<div id="show" style="display: none;">
+							<img class="rotation" style="width: 8rem;" src="{{ url_for('static', filename='web/static/assets/images/pay.png') }}" alt="">
+							<div class="show-box">
+								<img src=""  alt="">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="charge">
+				<a href="#" class="charge-btn" data-id="1011" data-title="5连抽45元"><img src="{{ url_for('static', filename='web/static/assets/images/activity/pickup-5.png') }}" style="width: 5rem;" alt=""></a>
+				<a href="#" class="charge-btn" data-id="1012" data-title="20连抽150元"><img src="{{ url_for('static', filename='web/static/assets/images/activity/pickup-20.png') }}" style="width: 5rem;" alt=""></a>
+			</div>
+		</td>
+		<td width="50%" valign="top" align="left" style="position: relative">
+			<div class="treasure-title" style="text-align: center;position: absolute;top: -0.4rem;left: 2.2rem;"><img style="width: 70%;" src="{{ url_for('static', filename='web/static/assets/images/xylp.png') }}" alt=""></div>
+			<div class="treasure">
+				<dl class="stuff" id="stuff">
+					{% if data['wheel_reward']['val_type'] == 'diamond' %}
+						<dt><img src="{{ url_for('static', filename='web/static/assets/images/cycstal_2.png') }}" alt=""></dt>
+					{% elif data['wheel_reward']['val_type'] == 'gold' %}
+						<dt><img src="{{ url_for('static', filename='web/static/assets/images/gold_2.png') }}" alt=""></dt>
+					{% endif %}
+					<dd class="hot">{{ data['wheel_reward']['val'] }} {{ data['wheel_reward']['val_type_name'] }}</dd>
+					<dd class="me">我的幸运值：<span id="my_progress">{{data['my_progress']}}</span></dd>
+				</dl>
+				<div class="schedule">
+					<table>
+						<tr>
+							<td width="20%">幸运进度</td>
+							<td valign="middle" align="center">
+								<div class="container">
+								    <div class="progress">
+								      <span class="green" id="progress" style="width: {{data['progress']}}%;"><span>{{data['progress']}}%</span></span>
+								    </div>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" align="center" style="font-size: 0.8rem;">
+								每一次转盘，奖励一点幸运值
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</td>
+		<td width="5%">
+			<div class="dialog-area" id="my-win" data-dialog-id="win-rule">
+				<a href="#"><img src="{{ url_for('static', filename='web/static/assets/images/me.png') }}" alt=""></a>
+			</div>
+			<div class="dialog-area rules" id="rule_box" data-dialog-id="win-my-score">
+				<span>规</span>
+				<span>则</span>
+			</div>
+		</td>
+	</tr>
+</table>
+
+
+<script type="text/template" id="my_win_tpl">
+
+		<p class="grad">
+	第$round$期
+	<span>
+		奖励：$title$
+	</span>
+	</p>
+</script>
+<script type="text/template" id="history_tpl">
+  <dl>
+	<dt class="grad">
+		第$round$期
+		<span>
+			奖励：$title$
+		</span>
+	</dt>
+	<dd>
+		奖励玩家：$nick$
+	</dd>
+	<dd>
+		开奖时间：$create_time$
+	</dd>
+</dl>
+</script>
+
+<div id="loading"></div>
+<div class="placeholder" style="position: absolute;top: 0;left: 0;"></div>
+<img src="{{ url_for('static', filename='web/static/assets/images/ip8_1.png') }}" style="display: none;" id="iphone" alt="">
+<img src="{{ url_for('static', filename='web/static/assets/images/cycstal.png') }}" style="display: none;" id="diamond" alt="">
+<img src="{{ url_for('static', filename='web/static/assets/images/gold.png') }}" style="display: none;" id="gold" alt="">
+<img src="{{ url_for('static', filename='web/static/assets/images/flow.png') }}" style="display: none;" id="flow_card" alt="">
+<img src="{{ url_for('static', filename='web/static/assets/images/box_gold.png') }}" style="display: none;" id="box_gold" alt="">
+<img src="{{ url_for('static', filename='web/static/assets/images/box_flow.png') }}" style="display: none;" id="box_flow" alt="">
+<img src="{{ url_for('static', filename='web/static/assets/images/box_diamond.png') }}" style="display: none;" id="box_diamond" alt="">
+
+<script src="https://cdn.bootcss.com/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='web/static/assets/js/awardRotate.js') }}"></script>
+<script  type="text/javascript" src="{{ url_for('static', filename='web/static/assets/js/tabs.js') }}"></script>
+<script  type="text/javascript" src="{{ url_for('static', filename='web/static/assets/js/layer.js') }}"></script>
+<script  type="text/javascript" src="{{ url_for('static', filename='web/static/assets/js/main.js') }}"></script>
+<script type="text/javascript">
+var UID = geturlparam('uid')
+var COMMENT = 'wheel_recharge'
+var URL = '{{ data["ACTIVITY_CREATE_URL"] }}'
+var PLAY_URL = '{{ data["ACTIVITY_PLAY"]["wheel"] }}'
+var DIAMOND_URL = '/web/static/assets/images/cycstal_2.png'
+var GOLD_URL = '/web/static/assets/images/gold_2.png'
+
+var REWARD_CONF = {
+			'gold_400000':1,
+			'diamond_40':2,
+			'gold_500000':3,
+			'flow_card_150':4,
+			'gold_600000':6,
+		}
+var SHOW_LUCKY_CONF = {
+	'gold':"box_gold",
+	'diamond':"box_diamond",
+	'flow_card':"box_flow"
+}
+
+$(window.parent.document).find("#main").load(function () {
+    var main = $(window.parent.document).find("#main");
+
+    if(window.parent.main_height != null){
+    	var thisheight = window.parent.main_height
+    }else{
+    	var thisheight = $(document).height();
+    	window.parent.main_height = thisheight
+    }
+    main.height(thisheight);
+
+});
+
+var turnplate={
+		restaraunts:[],				//大转盘奖品名称
+		colors:[],					//大转盘奖品区块对应背景颜色
+		outsideRadius:192,			//大转盘外圆的半径
+		textRadius:155,				//大转盘奖品位置距离圆心的距离
+		insideRadius:68,			//大转盘内圆的半径
+		startAngle:0,				//开始角度
+
+		bRotate:false				//false:停止;ture:旋转
+};
+
+$(document).ready(function(){
+	$('#user_profile_info').on('click', function(){
+		alert(123)
+//		layer.open({
+//			style:'background-color:#FF4351;color:#fff',
+//			content: '',
+//			type:1,
+//			title:'',
+//			shade:'background-color: rgba(0,0,0,.2)',
+//			style:'margin-top:0.4rem;padding:0.4rem 0.6rem;background-color: #dcf6fb;border: 1px solid #66d9ef;width: 86%;height:80%;border-radius:10px;font-size:0.6rem;color:#2d597c;border-radius: 10px;',
+//			className:'activity-dialog-close rule-box',
+//			content:'<div>亲，你还没有获得“实物”奖励哦，无需进行领取操作，赶紧去参加活动吧！</div>>'
+//		  });
+	})
+	$('#my-win').data('uid', UID);
+	$('.charge-btn').click(function(){
+			var shop_id = $(this).data('id')
+			var shop_title = $(this).data('title')
+
+			$.getJSON(URL,{
+				'shop_id':shop_id,
+				'uid':UID,
+				'comment':COMMENT,
+				d:new Date().getTime()
+			},function(data){
+				if(data.code == 0){
+					layer.open({
+						style:'background-color:#00d12e;color:#fff',
+						content: '创建订单成功，请稍等...',
+						time:3
+					  });
+//					callJavaMethod({
+//						'order_sn':data.ext.order_sn,
+//						'money':data.ext.money,
+//						'callback':data.ext.callback,
+//						'name': shop_title,
+//						'uid':UID,
+//						'tag':'activity_lucky_wheel',
+//						 'data':{}
+//					})
+				}else{
+					layer.open({
+						style:'background-color:#FF4351;color:#fff',
+						content: data.msg,
+						time:3
+					  });
+				}
+				//callJavaMethod(data_str)
+//				alert(data_str)
+//				console.log(data)
+			})
+
+        });
+
+
+	//动态添加大转盘的奖品与奖品区域背景颜色
+	turnplate.restaraunts = ["40万金币", "40个钻石", "50万金币", "150张流量券", "IPhoneX", "60万金币"];
+	turnplate.colors = ["#FFF4D6", "#FFFFFF", "#FFF4D6", "#FFFFFF","#FFF4D6", "#FFFFFF"];
+
+
+	var rotateTimeOut = function (){
+		$('#wheelcanvas').rotate({
+			angle:0,
+			animateTo:2160,
+			duration:8000,
+			callback:function (){
+				layer.open({
+						style:'background-color:#FF4351;color:#fff',
+						content: '网络超时，请检查您的网络设置！',
+						time:3
+					  });
+			}
+		});
+	};
+
+	//旋转转盘 item:奖品位置; txt：提示语;
+	var rotateFn = function (item, txt, data){
+		var angles = item * (360 / turnplate.restaraunts.length) - (360 / (turnplate.restaraunts.length*2));
+		if(angles<270){
+			angles = 270 - angles;
+		}else{
+			angles = 360 - angles + 270;
+		}
+		$('#wheelcanvas').stopRotate();
+		$('#wheelcanvas').rotate({
+			angle:0,
+			animateTo:angles+1800,
+			duration:8000,
+			callback:function (){
+				console.log(data)
+				turnplate.bRotate = !turnplate.bRotate;
+				is_loading = false
+				if(data.ext.play_count > 0){
+//
+					var img_url = $('#'+SHOW_LUCKY_CONF[data.ext.lucky_code]).attr('src')
+					$('#show .show-box img').attr('src', img_url)
+					$('#show').show()
+					if(data.ext.progress >= 100) {
+						setTimeout(function(){
+							window.location.href = window.location.href
+						}, 4000)
+					}else{
+						setTimeout(function(){
+							$('#show').hide()
+							$('.pointer').click()
+					}, 3000)
+					}
+
+				}else{
+					layer.open({
+						content: '抽取次数不足，请去充值'
+						,skin: 'msg'
+						,time: 2 //2秒后自动关闭
+					  });
+				}
+			}
+		});
+	};
+	var rate_index = null;
+	var is_loading = false;
+	$('.pointer').click(function (){
+		if(is_loading) return
+		is_loading = true
+		$.getJSON(PLAY_URL,{
+			uid:UID
+		},function(data){
+			if(data.code == 0){
+
+				$('#user_remain_play').text(data.ext.play_count)
+				$('#my_progress').text(data.ext.my_progress)
+				$('#progress').width(data.ext.progress+'%')
+				$('#progress span').text(data.ext.progress+'%')
+				if(data.ext.wheel_reward.val_type == 'gold'){
+					$('#stuff img').attr('src', GOLD_URL)
+				}else if (data.ext.wheel_reward.val_type == 'diamond'){
+					$('#stuff img').attr('src', DIAMOND_URL)
+				}
+				$('#stuff dd.hot').text(data.ext.wheel_reward.val+' '+data.ext.wheel_reward.val_type_name)
+
+				if(turnplate.bRotate)return;
+				turnplate.bRotate = !turnplate.bRotate;
+				//获取随机数(奖品个数范围内)
+				// var item = rnd(1,turnplate.restaraunts.length);
+				item = REWARD_CONF[data.ext.index]
+//				alert(JSON.stringify(data))
+//				alert(item+','+turnplate.restaraunts[item-1])
+				//奖品数量等于10,指针落在对应奖品区域的中心角度[252, 216, 180, 144, 108, 72, 36, 360, 324, 288]
+				rotateFn(item, turnplate.restaraunts[item-1], data);
+			}else{
+				$.getJSON(URL,{
+				'shop_id':1013, // 1013 = 10元1次
+				'uid':UID,
+				'comment':COMMENT,
+				d:new Date().getTime()
+			},function(data){
+				if(data.code == 0){
+					layer.open({
+						style:'background-color:#00d12e;color:#fff',
+						content: '创建订单成功，请稍等...',
+						time:3
+					  });
+				}else{
+					layer.open({
+						style:'background-color:#FF4351;color:#fff',
+						content: data.msg,
+						time:3
+					  });
+				}
+				//callJavaMethod(data_str)
+//				alert(data_str)
+//				console.log(data)
+			})
+			}
+		});
+//		if(turnplate.bRotate)return;
+//		turnplate.bRotate = !turnplate.bRotate;
+//		//获取随机数(奖品个数范围内)
+//		// var item = rnd(1,turnplate.restaraunts.length);
+//		item = 1
+//		//奖品数量等于10,指针落在对应奖品区域的中心角度[252, 216, 180, 144, 108, 72, 36, 360, 324, 288]
+//		rotateFn(item, turnplate.restaraunts[item-1]);
+		/* switch (item) {
+			case 1:
+				rotateFn(252, turnplate.restaraunts[0]);
+				break;
+			case 2:
+				rotateFn(216, turnplate.restaraunts[1]);
+				break;
+			case 3:
+				rotateFn(180, turnplate.restaraunts[2]);
+				break;
+			case 4:
+				rotateFn(144, turnplate.restaraunts[3]);
+				break;
+			case 5:
+				rotateFn(108, turnplate.restaraunts[4]);
+				break;
+			case 6:
+				rotateFn(72, turnplate.restaraunts[5]);
+				break;
+			case 7:
+				rotateFn(36, turnplate.restaraunts[6]);
+				break;
+			case 8:
+				rotateFn(360, turnplate.restaraunts[7]);
+				break;
+			case 9:
+				rotateFn(324, turnplate.restaraunts[8]);
+				break;
+			case 10:
+				rotateFn(288, turnplate.restaraunts[9]);
+				break;
+		} */
+//		console.log(item);
+	});
+});
+
+function rnd(n, m){
+	var random = Math.floor(Math.random()*(m-n+1)+n);
+	return random;
+
+}
+
+
+//页面所有元素加载完毕后执行drawRouletteWheel()方法对转盘进行渲染
+window.onload=function(){
+	drawRouletteWheel();
+};
+
+function drawRouletteWheel() {
+  var canvas = document.getElementById("wheelcanvas");
+  if (canvas.getContext) {
+	  //根据奖品个数计算圆周角度
+	  var arc = Math.PI / (turnplate.restaraunts.length/2);
+	  var ctx = canvas.getContext("2d");
+	  //在给定矩形内清空一个矩形
+	  ctx.clearRect(0,0,422,422);
+	  //strokeStyle 属性设置或返回用于笔触的颜色、渐变或模式
+	  ctx.strokeStyle = "#FFBE04";
+	  //font 属性设置或返回画布上文本内容的当前字体属性
+	  ctx.font = '30px Microsoft YaHei';
+	  for(var i = 0; i < turnplate.restaraunts.length; i++) {
+		  var angle = turnplate.startAngle + i * arc;
+		  ctx.fillStyle = turnplate.colors[i];
+		  ctx.beginPath();
+		  //arc(x,y,r,起始角,结束角,绘制方向) 方法创建弧/曲线（用于创建圆或部分圆）
+		  ctx.arc(211, 211, turnplate.outsideRadius, angle, angle + arc, false);
+		  ctx.arc(211, 211, turnplate.insideRadius, angle + arc, angle, true);
+		  ctx.stroke();
+		  ctx.fill();
+		  //锁画布(为了保存之前的画布状态)
+		  ctx.save();
+
+		  //----绘制奖品开始----
+		  ctx.fillStyle = "#E5302F";
+		  var text = turnplate.restaraunts[i];
+		  var line_height = 32;
+		  //translate方法重新映射画布上的 (0,0) 位置
+		  ctx.translate(211 + Math.cos(angle + arc / 2) * turnplate.textRadius, 211 + Math.sin(angle + arc / 2) * turnplate.textRadius);
+
+		  //rotate方法旋转当前的绘图
+		  ctx.rotate(angle + arc / 2 + Math.PI / 2);
+
+		  /** 下面代码根据奖品类型、奖品名称长度渲染不同效果，如字体、颜色、图片效果。(具体根据实际情况改变) **/
+		  if(text.indexOf("IPhone")>=0){
+			  ctx.fillText(text, -ctx.measureText(text).width / 2, 0);
+			  //var texts = text.split("M");
+//			  for(var j = 0; j<texts.length; j++){
+//				  ctx.font = j == 0?'bold 34px Microsoft YaHei':'22px Microsoft YaHei';
+//				  if(j == 0){
+//					  ctx.fillText(texts[j]+"M", -ctx.measureText(texts[j]+"M").width / 2, j * line_height);
+//				  }else{
+//					  ctx.fillText(texts[j], -ctx.measureText(texts[j]).width / 2, j * line_height);
+//				  }
+//			  }
+		  }else if(text.indexOf("150张") >= 0){
+			  ctx.font = '26px Microsoft YaHei';
+			  ctx.fillText(text , -ctx.measureText(text ).width / 2, 0 * line_height);
+
+//				  if (j == 0) {
+//					  ctx.fillText(texts[j] + "M", -ctx.measureText(texts[j] + "M").width / 2, j * line_height);
+//				  } else {
+//					  ctx.fillText(texts[j], -ctx.measureText(texts[j]).width / 2, j * line_height);
+//				  }
+		  }else if(text.indexOf("M") == -1 && text.length>6){//奖品名称长度超过一定范围
+			  text = text.substring(0,6)+"||"+text.substring(6);
+			  var texts = text.split("||");
+			  for(var j = 0; j<texts.length; j++){
+				  ctx.fillText(texts[j], -ctx.measureText(texts[j]).width / 6, j * line_height);
+			  }
+		  }else{
+			  //在画布上绘制填色的文本。文本的默认颜色是黑色
+			  //measureText()方法返回包含一个对象，该对象包含以像素计的指定字体宽度
+			  ctx.fillText(text, -ctx.measureText(text).width / 2, 0);
+		  }
+
+		  //添加对应图标
+		  if(text.indexOf("IPhone")>=0){
+			  var img= document.getElementById("iphone");
+			  img.onload=function(){
+				  ctx.drawImage(img,0,-10,60,82);
+			  };
+			  ctx.drawImage(img,-35,10);
+		  }else if(text.indexOf("40个")>=0){
+			  var img= document.getElementById("diamond");
+			  img.onload=function(){
+				  ctx.drawImage(img,-15,10);
+			  };
+			  ctx.drawImage(img,-40,10);
+		  }else if(text.indexOf("60万")>=0){
+			  var img= document.getElementById("gold");
+			  img.onload=function(){
+				  ctx.drawImage(img,-15,10);
+			  };
+			  ctx.drawImage(img,-15,10);
+		  }else if(text.indexOf("40万")>=0){
+			  var img= document.getElementById("gold");
+			  img.onload=function(){
+				  ctx.drawImage(img,-15,10);
+			  };
+			  ctx.drawImage(img,-15,10);
+		  }else if(text.indexOf("50万")>=0){
+			  var img= document.getElementById("gold");
+			  img.onload=function(){
+				  ctx.drawImage(img,-15,10);
+			  };
+			  ctx.drawImage(img,-15,10);
+		  }else if(text.indexOf("150张")>=0){
+			  var img= document.getElementById("flow_card");
+			  img.onload=function(){
+				  ctx.drawImage(img,-15,10,86.4,57.6);
+			  };
+			  ctx.drawImage(img,-40,10,86.4,57.6);
+		  }
+		  //把当前画布返回（调整）到上一个save()状态之前
+		  ctx.restore();
+		  //----绘制奖品结束----
+	  }
+  }
+}
+
+//供java调用的js函数，并且带参数过来
+function calllJsMethodByJava(java_str){
+	$('uid').text(java_str)
+}
+//调用java函数，并且传json参数过去
+function callJavaMethod(s){
+	window.callandroid.callFromJs(JSON.stringify(s));
+}
+//获取url的uid参数
+function geturlparam(name){
+	  var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+	  var r = window.location.search.substr(1).match(reg);
+	  if (r != null) return unescape(r[2]); return null;
+}
+</script>
+</body>
+</html>

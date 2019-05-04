@@ -1,0 +1,64 @@
+syntax = "proto2";
+package cardgame;
+
+import "struct.proto";
+option optimize_for = LITE_RUNTIME;
+option java_package = "com.zhili.cardgame.proto";  
+option java_outer_classname = "Bank";
+
+
+message QueryBankReq {
+	enum DEF {
+		ID = 4500;
+	}
+	
+}
+
+message QueryBankResp {
+	enum DEF {
+		ID = 4501;
+	}
+	optional int64 gold = 1;
+	optional int64 limit = 2;
+	optional int64 next_vip_limit = 3;
+}
+
+message SaveMoneyReq {
+	enum DEF {
+		ID = 4502;
+	}
+	required int64 gold = 1;
+}
+
+message SaveMoneyResp {
+	enum DEF {
+		ID = 4503;
+	}
+	optional Result result = 1;
+}
+
+	
+
+message TransferGoldReq {
+	enum DEF {
+		ID = 4504;
+	}
+	required int32 target = 1;
+	required int64 gold = 2;
+	optional int32 check = 3; // 1=验证，2=确认
+}
+
+message TransferGoldResp {
+	enum DEF {
+		ID = 4505;
+	}
+	optional string nick = 1; // check = 1时返回
+	optional int64 fee = 2; // check = 1时返回
+	optional int32 fee_rate = 3; // check = 1时返回
+	optional Result result = 4; // 2=确认 时返回
+}
+
+
+
+
+
