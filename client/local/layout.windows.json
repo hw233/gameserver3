@@ -5,10 +5,10 @@
       "main": true,
       "url": "app://editor/index.html",
       "windowType": "dockable",
-      "x": 320,
-      "y": 158,
-      "width": 1280,
-      "height": 720,
+      "x": 311,
+      "y": 116,
+      "width": 1255,
+      "height": 843,
       "layout": {
         "children": [
           {
@@ -18,7 +18,7 @@
                 "children": [
                   "hierarchy"
                 ],
-                "height": 300,
+                "height": 357.109375,
                 "type": "panel",
                 "width": 204
               },
@@ -27,41 +27,25 @@
                 "children": [
                   "assets"
                 ],
-                "height": 336,
+                "height": 400.109375,
                 "type": "panel",
                 "width": 204
               }
             ],
-            "height": 638,
+            "height": 759.21875,
             "type": "dock-v",
             "width": 204
           },
           {
             "children": [
               {
+                "active": 0,
                 "children": [
-                  {
-                    "active": 0,
-                    "children": [
-                      "scene"
-                    ],
-                    "height": 336,
-                    "type": "panel",
-                    "width": 501.984375
-                  },
-                  {
-                    "active": 0,
-                    "children": [
-                      "node-library"
-                    ],
-                    "height": 336,
-                    "type": "panel",
-                    "width": 264
-                  }
+                  "scene"
                 ],
-                "height": 336,
-                "type": "dock-h",
-                "width": 767.984375
+                "height": 400.109375,
+                "type": "panel",
+                "width": 743
               },
               {
                 "active": 0,
@@ -69,22 +53,23 @@
                   "console",
                   "timeline"
                 ],
-                "height": 300,
+                "height": 357.109375,
                 "type": "panel",
-                "width": 767.984375
+                "width": 743
               }
             ],
-            "height": 638,
+            "height": 759.21875,
             "type": "dock-v",
-            "width": 767.984375
+            "width": 743
           },
           {
-            "active": 0,
+            "active": 1,
             "children": [
               "inspector",
+              "node-library",
               "cocos-services"
             ],
-            "height": 638,
+            "height": 759.21875,
             "type": "panel",
             "width": 304
           }
