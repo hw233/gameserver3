@@ -1,0 +1,15 @@
+*/.idea/*
+*.pyc
+*/client/build/*
+*/client/library/*
+*/client/temp/*
+*/client/local/*
+*/client/jsb-default/*
+*/client/jsb-binary/*
+*/client/jsb-link/*
+*/client/web-desktop/*
+*/client/web-mobile/*
+*/client/runtime/*
+*/client/build/*
+*/client/jsb/*
+*/client/export/*
